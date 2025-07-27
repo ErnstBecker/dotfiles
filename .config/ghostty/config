@@ -6,9 +6,8 @@ font-family = CaskaydiaCove NF
 font-family-bold = CaskaydiaCove NF Bold
 font-family-italic = CaskaydiaCove NF Italic
 font-family-bold-italic = CaskaydiaCove NF Bold Italic
-font-synthetic-style = true
 font-size = 14
-font-style = Bold 
+font-style = Bold
 
 # Cursor
 cursor-style = bar
