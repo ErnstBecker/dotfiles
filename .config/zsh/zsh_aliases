@@ -46,8 +46,8 @@ alias ga="git add"
 alias gaa="git add ."
 alias gap="git add --patch"
 alias gc="git commit -m"
-alias gca="gc --amend --no-edit"
-alias gce="gc --amend"
+alias gca="git commit --amend --no-edit"
+alias gce="git commit --amend"
 
 # Branching
 alias gb="git branch"
