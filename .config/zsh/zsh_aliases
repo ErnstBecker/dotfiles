@@ -55,6 +55,7 @@ alias gba="gb --all"
 alias gco="git checkout"
 alias gm="git merge"
 alias gcp="git cherry-pick"
+alias gbrl="git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -d"
 
 # Push/Pull/Sync
 alias gp="git push"
