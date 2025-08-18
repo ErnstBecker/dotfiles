@@ -1,6 +1,9 @@
 # Default Shell
 command = /bin/zsh
 
+# Configs
+confirm-close-surface = false
+
 # Font
 font-family = CaskaydiaCove NF
 font-family-bold = CaskaydiaCove NF Bold
