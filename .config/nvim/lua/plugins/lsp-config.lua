@@ -9,7 +9,14 @@ return {
 		'williamboman/mason-lspconfig.nvim',
 		config = function()
 			require('mason-lspconfig').setup({
-				ensure_installed = { 'lua_ls' }
+				ensure_installed = {
+					'lua_ls',
+					'ts_ls',
+					'gopls',
+					'rust_analyzer',
+					'pyright',
+					'ruby_lsp'
+				}
 			})
 		end
 	},
@@ -19,6 +26,10 @@ return {
 			local lspconfig = require('lspconfig')
 			lspconfig.lua_ls.setup({})
 			lspconfig.ts_ls.setup({})
+			lspconfig.gopls.setup({})
+			lspconfig.rust_analyzer.setup({})
+			lspconfig.pyright.setup({})
+			lspconfig.ruby_lsp.setup({})
 
 			vim.diagnostic.config({
 				signs= false
