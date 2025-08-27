@@ -3,43 +3,35 @@
 #  fastfetch
 # fi
 
+# ------------------------------
+# Aliases and Keybindings
+# ------------------------------
+[ -f ~/.config/zsh/zsh_aliases ] && source ~/.config/zsh/zsh_aliases
+[ -f ~/.config/zsh/zsh_keybinds ] && source ~/.config/zsh/zsh_keybinds
 
-# Load zsh_aliases 
-if [ -f ~/.config/zsh/zsh_aliases ]; then
-  source ~/.config/zsh/zsh_aliases
-fi
-
-
-# Load Keybindings
-if [ -f ~/.config/zsh/zsh_keybinds ]; then
-  source ~/.config/zsh/zsh_keybinds
-fi
-
-
-# Set the dir we want to store zinit and plugins
+# ------------------------------
+# Zinit (plugin manager)
+# ------------------------------
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d "$ZINIT_HOME" ] && mkdir -p "$(dirname $ZINIT_HOME)" && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
 
-# If Zinit is not installed, then install it.
-if [ ! -d "$ZINIT_HOME" ]; then
-  mkdir -p "$(dirname $ZINIT_HOME)"
-  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-fi
-
-
-# Shell integrations
+# ------------------------------
+# Oh-My-Posh, zoxide, fzf
+# ------------------------------
 source "${ZINIT_HOME}/zinit.zsh"
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"
 
-
-# Load zsh plugins with Zinit
+# ------------------------------
+# Zsh Plugins
+# ------------------------------
 zinit light Aloxaf/fzf-tab
 zinit load zsh-users/zsh-syntax-highlighting
 zinit load zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 autoload -U compinit && compinit
-
 
 # Completion Styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-Z}'
@@ -47,27 +39,23 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
-
+# ------------------------------
 # History
+# ------------------------------
 HISTFILE=~/.config/zsh/zsh_history
 HISTSIZE=500
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
-setopt appendhistory
-setopt sharehistory
-setopt hist_ignore_space
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_ignore_dups
-setopt hist_find_no_dups
+setopt appendhistory sharehistory hist_ignore_space hist_ignore_all_dups hist_save_no_dups hist_ignore_dups hist_find_no_dups
 
-
-# PATHs
-#
-# Asdf
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-# append completions to fpath
+# ------------------------------
+# asdf (all plugins + shims)
+# ------------------------------
+export ASDF_DATA_DIR="${ASDF_DATA_DIR:-$HOME/.asdf}"
+export ASDF_PATH="$ASDF_DATA_DIR/shims:$PATH"
 fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 
-# Load Angular CLI autocompletion.
+# ------------------------------
+# Optional: Angular CLI autocompletion
+# ------------------------------
 # source <(ng completion script)
