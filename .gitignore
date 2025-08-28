@@ -4,7 +4,7 @@ lazy-lock.json
 
 # Zen Browser 
 .zen/ernst.default/*
-!.zen/ernst.default/chrome
+!.zen/ernst.default/chrome/chromeUser.css
 !.zen/ernst.default/user.js
 
 # Firefox

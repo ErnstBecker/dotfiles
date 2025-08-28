@@ -1,0 +1,4 @@
+/* Disable workspace tab */
+vbox.zen-workspace-tabs-section.zen-current-workspace-indicator {
+    display: none !important;
+}
