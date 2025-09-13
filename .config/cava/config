@@ -1,0 +1,25 @@
+[general]
+framerate = 120
+bar_width = 2
+bar_spacing = 1
+bar_height = 32
+
+[input]
+method = pipewire
+source = auto
+
+[color]
+gradient = 1
+
+gradient_count = 3
+gradient_color_1 = '#202020'
+gradient_color_2 = '#ff0043'
+
+[output]
+method = ncurses
+channels = mono
+alacritty_sync = 1
+
+[smoothing]
+integral = 85
+gravity = 100
