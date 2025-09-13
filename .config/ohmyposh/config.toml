@@ -1,0 +1,68 @@
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
+version = 3
+final_space = true
+
+[palette]
+  black = '#101010'
+  red = '#ff0043'
+  green = '#78BC61'
+  yellow = '#F4C95D'
+  blue = '#A2D6F9'
+  white = '#F9EBE0'
+
+[transient_prompt]
+  template = '<p>λ </>'
+  foreground = 'red'
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    template = '<p>Run in</p> <p:red>{{ .FormattedMs }}</> '
+    foreground = 'white'
+    type = 'executiontime'
+    style = 'plain'
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    template = '<p:red>{{ .UserName }}</> <p>on</>'
+    foreground = 'white'
+    type = 'session'
+    style = 'plain'
+
+  [[blocks.segments]]
+    template = ' {{.Parent}}{{.Path}}'
+    foreground = 'red'
+    type = 'path'
+
+    [blocks.segments.properties]
+      style = 'folder'
+
+  [[blocks.segments]]
+    template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}<p:yellow>*</>{{ end }}</><red>{{ if gt .Behind 0 }}⇣{{ end }}</><green>{{ if gt .Ahead 0 }}⇡{{ end }}</>'
+    foreground = 'white'
+    background = 'transparent'
+    type = 'git'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      branch_icon = ''
+      commit_icon = '@'
+      fetch_status = true
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    template = 'λ'
+    foreground = 'white'
+    type = 'text'
+    style = 'plain'

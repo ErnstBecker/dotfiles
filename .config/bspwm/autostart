@@ -1,0 +1,4 @@
+#! bin/sh
+
+xwallpaper --stretch ~/.config/background &
+picom --config ~/.config/bspwm/picom.conf --backend xrender &

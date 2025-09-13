@@ -1,0 +1,15 @@
+<!-- .config -->
+alacritty
+neofetch
+bspwm
+kitty
+
+<!-- Git -->
+.git
+.gitignore
+README.md
+
+<!-- Folders -->
+modules
+scripts
+info

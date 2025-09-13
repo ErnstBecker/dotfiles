@@ -1,0 +1,9 @@
+#! /bin/sh
+
+
+# █▀▄▀█ █▀█ █▄░█ █ ▀█▀ █▀█ █▀█
+# █░▀░█ █▄█ █░▀█ █ ░█░ █▄█ █▀▄
+#bspc monitor HDMI-0 -d I II III IV V VI
+#bspc monitor DVI-I-0 VII
+#xrandr --output HDMI-0 --auto --primary --output DVI-I-0 --auto --pos 0x312
+bspc monitor eDP1 -d I II III IV V VI
