@@ -1,0 +1,5 @@
+#?  █▄▀  █▀▀  █░█  █▀▄  █  █▄░█  █▀▄  █▀▀
+#?  █▀▄  ██▄   █   ██▀  █  █░▀█  █▄▀  ▄▄█
+
+bindkey '^b' history-search-backward
+bindkey '^n' history-search-forward

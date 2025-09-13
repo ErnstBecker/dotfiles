@@ -1,0 +1,15 @@
+zsh_history
+btop.log
+lazy-lock.json
+
+.themes
+
+# Zen Browser
+.zen/ernst.default/*
+!.zen/ernst.default/chrome/chromeUser.css
+!.zen/ernst.default/user.js
+
+# Firefox
+.mozilla/firefox/ernst.default/*
+!.mozilla/firefox/ernst.default/chrome
+!.mozilla/firefox/ernst.default/user.js

@@ -1,0 +1,39 @@
+import = ["/home/ernst/.config/alacritty/themes/BeckerTheme.toml"]
+
+[env]
+TERM = "xterm-256color"
+W3MIMGDISPLAY = "/usr/lib/w3m/w3mimgdisplay"
+
+[font]
+size = 14.0
+
+[font.bold]
+family = "CaskaydiaCove Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "CaskaydiaCove Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "CaskaydiaCove Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "CaskaydiaCove Nerd Font"
+style = "Regular"
+
+[shell]
+program = "/bin/zsh"
+
+[window]
+decorations = "none"
+opacity = 0.7
+title = "Alacritty"
+
+[window.padding]
+x = 20
+y = 20
+
+[cursor]
+style = "Beam"
