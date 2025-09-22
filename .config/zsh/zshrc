@@ -6,7 +6,7 @@
 # ------------------------------
 # Aliases and Keybindings
 # ------------------------------
-[ -f ~/.config/zsh/zsh_aliases ] && source ~/.config/zsh/zsh_aliases
+[ -f ~/.config/shell/alias ] && source ~/.config/shell/alias
 [ -f ~/.config/zsh/zsh_keybinds ] && source ~/.config/zsh/zsh_keybinds
 
 # ------------------------------
@@ -41,7 +41,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 # ------------------------------
 # History
 # ------------------------------
-HISTFILE=~/.config/zsh/zsh_history
+HISTFILE=~/.config/zsh/history
 HISTSIZE=500
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
