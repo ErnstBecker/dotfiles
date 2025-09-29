@@ -1,0 +1,167 @@
+export RED="\e[31m"
+export RESET="\e[0m"
+
+start_time=""
+command_running=false
+
+function timer_start() {
+	if [[ "$command_running" == false ]]; then
+		start_time=$(date +%s%3N)
+		command_running=true
+	fi
+}
+
+function timer_stop() {
+	if [[ "$command_running" == true && -n "$start_time" ]]; then
+		end_time=$(date +%s%3N)
+		elapsed_ms=$((end_time - start_time))
+
+		if [[ $elapsed_ms -gt 100 ]]; then
+			remainder=$((elapsed_ms % 1000))
+			if [[ $remainder -ge 1 && $remainder -le 15 ]]; then
+				elapsed_ms=$((elapsed_ms - remainder))
+			fi
+
+			if [[ $((elapsed_ms % 1000)) -lt 50 ]]; then
+				elapsed_ms=$((elapsed_ms - (elapsed_ms % 1000)))
+			fi
+
+			total_seconds=$((elapsed_ms / 1000))
+			milliseconds=$((elapsed_ms % 1000))
+
+			minutes=$((total_seconds / 60))
+			seconds=$((total_seconds % 60))
+
+			if [[ $minutes -gt 0 ]]; then
+				if [[ $milliseconds -eq 0 ]]; then
+					printf "Run in ${RED}%dm %ds\n${RESET}" $minutes $seconds
+				else
+					printf "Run in ${RED}%dm %d.%03ds\n${RESET}" $minutes $seconds $milliseconds
+				fi
+			else
+				if [[ $milliseconds -eq 0 ]]; then
+					printf "Run in ${RED}%ds\n${RESET}" $seconds
+				else
+					printf "Run in ${RED}%d.%03ds\n${RESET}" $seconds $milliseconds
+				fi
+			fi
+		fi
+		start_time=""
+		command_running=false
+	fi
+}
+
+trap 'timer_start' DEBUG
+PROMPT_COMMAND='timer_stop'
+PS1="${RED}\u${RESET} on ${RED}\w${RESET}\nλ "
+
+# GIT PROMPT
+
+export RED="\e[31m"
+export GREEN="\e[32m"
+export YELLOW="\e[33m"
+export RESET="\e[0m"
+
+start_time=""
+command_running=false
+
+function timer_start() {
+	if [[ "$command_running" == false ]]; then
+		start_time=$(date +%s%3N)
+		command_running=true
+	fi
+}
+
+function timer_stop() {
+	if [[ "$command_running" == true && -n "$start_time" ]]; then
+		end_time=$(date +%s%3N)
+		elapsed_ms=$((end_time - start_time))
+
+		if [[ $elapsed_ms -gt 100 ]]; then
+			remainder=$((elapsed_ms % 1000))
+			if [[ $remainder -ge 1 && $remainder -le 15 ]]; then
+				elapsed_ms=$((elapsed_ms - remainder))
+			fi
+
+			if [[ $((elapsed_ms % 1000)) -lt 50 ]]; then
+				elapsed_ms=$((elapsed_ms - (elapsed_ms % 1000)))
+			fi
+
+			total_seconds=$((elapsed_ms / 1000))
+			milliseconds=$((elapsed_ms % 1000))
+
+			minutes=$((total_seconds / 60))
+			seconds=$((total_seconds % 60))
+
+			if [[ $minutes -gt 0 ]]; then
+				if [[ $milliseconds -eq 0 ]]; then
+					printf "Run in ${RED}%dm %ds\n${RESET}" $minutes $seconds
+				else
+					printf "Run in ${RED}%dm %d.%03ds\n${RESET}" $minutes $seconds $milliseconds
+				fi
+			else
+				if [[ $milliseconds -eq 0 ]]; then
+					printf "Run in ${RED}%ds\n${RESET}" $seconds
+				else
+					printf "Run in ${RED}%d.%03ds\n${RESET}" $seconds $milliseconds
+				fi
+			fi
+		fi
+		start_time=""
+		command_running=false
+	fi
+}
+
+function git_prompt() {
+	local branch_name=""
+	local git_indicators=""
+
+	if git rev-parse --git-dir > /dev/null 2>&1; then
+		branch_name=$(git symbolic-ref --short HEAD 2>/dev/null || git describe --tags --exact-match 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
+
+		# (diff)
+		if ! git diff --quiet 2>/dev/null; then
+			git_indicators="${YELLOW}*${RESET}"
+		fi
+
+		# (staging)
+		if ! git diff --cached --quiet 2>/dev/null; then
+			git_indicators="${YELLOW}*${RESET}"
+		fi
+
+		# (untracked)
+		if [[ -n $(git ls-files --others --exclude-standard 2>/dev/null) ]]; then
+			git_indicators="${YELLOW}*${RESET}"
+		fi
+
+		# (ahead/behind)
+		local upstream=$(git rev-parse --abbrev-ref @{upstream} 2>/dev/null)
+		if [[ -n "$upstream" ]]; then
+			local ahead_behind=$(git rev-list --left-right --count HEAD...@{upstream} 2>/dev/null)
+			if [[ -n "$ahead_behind" ]]; then
+				local ahead=$(echo "$ahead_behind" | cut -f1)
+				local behind=$(echo "$ahead_behind" | cut -f2)
+
+				if [[ "$ahead" -gt 0 ]]; then
+					git_indicators="${git_indicators}${GREEN}⇡${RESET}"
+				fi
+
+				if [[ "$behind" -gt 0 ]]; then
+					git_indicators="${git_indicators}${RED}⇣${RESET}"
+				fi
+			fi
+		fi
+
+		if [[ -n "$branch_name" ]]; then
+			echo " $branch_name$git_indicators"
+		fi
+	fi
+}
+
+function update_prompt() {
+	timer_stop
+	PS1="${RED}\u${RESET} on ${RED}\w${RESET}$(git_prompt)\nλ "
+}
+
+trap 'timer_start' DEBUG
+PROMPT_COMMAND='update_prompt'

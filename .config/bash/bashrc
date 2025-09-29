@@ -1,0 +1,87 @@
+[[ $- != *i* ]] && return
+
+[ -f ~/.config/bash/profile ] && source ~/.config/bash/profile
+[ -f ~/.config/shell/alias ] && source ~/.config/shell/alias
+
+# ------------------------------
+# zoxide 
+# ------------------------------
+eval "$(zoxide init --cmd cd bash)"
+eval "$(fzf --bash)"
+
+# ------------------------------
+# asdf (all plugins + shims)
+# ------------------------------
+export ASDF_DATA_DIR="${ASDF_DATA_DIR:-$HOME/.asdf}"
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
+if [ -f "$ASDF_DATA_DIR/completions/asdf.bash" ]; then
+    source "$ASDF_DATA_DIR/completions/asdf.bash"
+fi
+
+# ------------------------------
+# History
+# ------------------------------
+HISTFILE=~/.config/shell/history
+HISTSIZE=500
+HISTFILESIZE=500
+shopt -s histappend
+shopt -s cmdhist
+HISTCONTROL=ignoreboth:erasedups
+
+
+
+
+
+
+# ------------------------------
+# Auto-install bash-preexec
+# ------------------------------
+PREEXEC_FILE="$HOME/.local/share/bash-preexec.sh"
+if [ ! -f "$PREEXEC_FILE" ]; then
+    echo "Instalando bash-preexec..."
+    mkdir -p "$(dirname "$PREEXEC_FILE")"
+    if command -v curl >/dev/null 2>&1; then
+        curl -fsSL https://raw.githubusercontent.com/rcaloras/bash-preexec/master/bash-preexec.sh -o "$PREEXEC_FILE" 2>/dev/null && echo "✓ bash-preexec instalado"
+    elif command -v wget >/dev/null 2>&1; then
+        wget -q https://raw.githubusercontent.com/rcaloras/bash-preexec/master/bash-preexec.sh -O "$PREEXEC_FILE" 2>/dev/null && echo "✓ bash-preexec instalado"
+    fi
+fi
+
+if [ -f "$PREEXEC_FILE" ]; then
+    source "$PREEXEC_FILE"
+fi
+
+# ------------------------------
+# Bash completions
+# ------------------------------
+if ! shopt -oq posix; then
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        source /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+        source /etc/bash_completion
+    fi
+fi
+
+# Custom completions (criar diretório se não existir)
+COMPLETION_DIR="$HOME/.local/share/bash-completion/completions"
+[ ! -d "$COMPLETION_DIR" ] && mkdir -p "$COMPLETION_DIR"
+
+for completion_file in "$COMPLETION_DIR"/*; do
+    if [ -r "$completion_file" ]; then
+        source "$completion_file"
+    fi
+done
+
+# ------------------------------
+# FZF integration
+# ------------------------------
+if command -v fzf >/dev/null 2>&1; then
+    # Tentar diferentes localizações do fzf no Arch
+    for fzf_path in /usr/share/fzf /usr/local/share/fzf; do
+        if [ -f "$fzf_path/key-bindings.bash" ]; then
+            source "$fzf_path/key-bindings.bash"
+            source "$fzf_path/completion.bash"
+            break
+        fi
+    done
+fi
