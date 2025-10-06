@@ -5,7 +5,7 @@ lazy-lock.json
 .themes
 
 # Zen Browser
-.zen/ernst.default/*
+.zen
 !.zen/ernst.default/chrome/chromeUser.css
 !.zen/ernst.default/user.js
 
