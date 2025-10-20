@@ -1,0 +1,72 @@
+#?  ▄▀█  █░░  █  ▄▀█  █▀▀  █▀▀  █▀▀
+#? █▀█  █▄▄  █  █▀█  ▄▄█  ██▄  ▄▄█
+
+
+#  █░░  ▄▀█  ▀▀█  █░█
+# █▄▄  █▀█  █▄▄   █
+alias clear-history="rm -f ~/.config/zsh/zsh_history && kill -9 $$"
+alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias pacman-clean="sudo pacman -Rns $(pacman -Qtdq)"
+alias paru-clean="pacman -Qtdq | sudo pacman -Rns -"
+alias clock="tty-clock -c -C 1 -b -s"
+alias battery="acpi"
+alias ff="fastfetch"
+alias c="clear"
+
+
+#  █▀▀  █░█  █▀▀  ▀█▀  █▀█  █▄ ▄█
+# █▄▄  █▄█  ▄▄█  ░█░  █▄█  █░▀░█
+alias cw="~/dotfiles/.config/scripts/chWPP.zsh"
+
+
+#  ▄▀█  █░░  ▀█▀
+# █▀█  █▄▄  ░█░
+alias ls="lsd --recursive --depth 1 --group-dirs=first"
+alias cat="bat --style=auto"
+
+
+#  █▄░█  ▄▀█  █░█  █  █▀▀  ▄▀█  ▀█▀  █  █▀█  █▄░█
+# █░▀█  █▀█  ▀▄▀  █  █▄█  █▀█  ░█░  █  █▄█  █░▀█
+alias ..="cd .."
+alias ...="cd ../.."
+
+
+#  █▀▀ █ ▀█▀
+# █▄█ █ ░█░
+# Init/Clone/Logs
+alias gi="git init"
+alias gcl="git clone"
+alias gs="git status --short"
+alias gd='git diff --output-indicator-new=" " --output-indicator-old=" "'
+alias gds='gd --staged'
+alias gl='git log --graph --all --pretty=format:"%C(magenta)%H%n%C(green)%an:  %ar%C(blue)  %C(cyan)%D%n%s%n"'
+
+# Add/Commit
+alias ga="git add"
+alias gaa="git add ."
+alias gap="git add --patch"
+alias gc="git commit -m"
+alias gca="git commit --amend --no-edit"
+alias gce="git commit --amend"
+
+# Branching
+alias gb="git branch"
+alias gba="gb --all"
+alias gco="git checkout"
+alias gm="git merge"
+alias gcp="git cherry-pick"
+alias gbrl="git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -d"
+
+# Push/Pull/Sync
+alias gp="git push"
+alias gpl="git pull"
+alias gf="git fetch"
+alias gpls="git stash && git pull && git stash apply"
+
+# Stash/Reset/Restore
+alias gst="git stash"
+alias gsta="gst apply"
+alias gr="git reset"
+alias grh="git reset --hard HEAD~1"
+alias grs="git restore"
+alias grss="git restore --staged"
