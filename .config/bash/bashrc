@@ -1,7 +1,7 @@
 [[ $- != *i* ]] && return
 
 [ -f ~/.config/bash/profile ] && source ~/.config/bash/profile
-[ -f ~/.config/shell/alias ] && source ~/.config/shell/alias
+[ -f ~/.alias ] && source ~/.alias
 
 # ------------------------------
 # zoxide 
@@ -21,7 +21,7 @@ fi
 # ------------------------------
 # History
 # ------------------------------
-HISTFILE=~/.config/shell/history
+HISTFILE=~/.history
 HISTSIZE=500
 HISTFILESIZE=500
 shopt -s histappend
