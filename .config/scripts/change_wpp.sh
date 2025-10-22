@@ -1,7 +1,7 @@
-#!/bin/zsh
+#!/bin/sh
 
 if [ -z "$1" ]; then
-    echo "Uso: $0 <arquivo>"
+    echo "Use: $0 <file>"
     exit 1
 fi
 
