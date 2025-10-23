@@ -5,20 +5,20 @@
     "source": "${HOME}/.config/fastfetch/images/kitty.png"
   },
   "display": {
-    "separator": " •  "
+    "separator": " • "
   },
   "modules": [
     {
       "type": "os",
       "format": "{2}",
-      "key": "\u001b[31mE R N S T",
+      "key": "\u001b[31mE R N S T"
     },
     {
       "type": "break"
     },
     {
       "type": "uptime",
-      "key": "\u001b[31m",
+      "key": "\u001b[31m"
     },
     {
       "type": "memory",
