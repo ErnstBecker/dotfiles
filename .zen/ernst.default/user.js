@@ -3,6 +3,8 @@ user_pref("zen.tabs.vertical.right-side", true);
 user_pref("zen.urlbar.behavior", "float");
 user_pref("zen.view.grey-out-inactive-windows", false);
 user_pref("browser.tabs.allow_transparent_browser", true);
+user_pref("zen.theme.content-element-separation", 0);
+
 // Tabs
 user_pref("zen.tabs.show-newtab-vertical", false);
 user_pref("zen.pinned-tab-manager.restore-pinned-tabs-to-pinned-url", true);
