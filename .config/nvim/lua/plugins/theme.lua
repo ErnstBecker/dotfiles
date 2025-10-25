@@ -1,9 +1,9 @@
 return {
 	{
-	'rebelot/kanagawa.nvim',
-	config = function()
-		require('kanagawa').setup({
-			compile = true,
+		'rebelot/kanagawa.nvim',
+		config = function()
+			require('kanagawa').setup({
+				compile = true,
 				undercurl = true,
 				commentStyle = { italic = true },
 				functionStyle = {},
