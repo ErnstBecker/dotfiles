@@ -31,6 +31,7 @@ zinit light Aloxaf/fzf-tab
 zinit load zsh-users/zsh-syntax-highlighting
 zinit load zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
+zinit light jeffreytse/zsh-vi-mode
 
 # Completion Styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-Z}'
