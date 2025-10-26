@@ -4,6 +4,7 @@ user_pref("zen.urlbar.behavior", "float");
 user_pref("zen.view.grey-out-inactive-windows", false);
 user_pref("browser.tabs.allow_transparent_browser", true);
 user_pref("zen.theme.content-element-separation", 0);
+user_pref("zen.view.experimental-no-window-controls", true);
 
 // Tabs
 user_pref("zen.tabs.show-newtab-vertical", false);
