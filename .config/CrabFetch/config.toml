@@ -1,0 +1,46 @@
+modules = [
+	"os",
+	"space",
+	"uptime",
+	"packages",
+	"memory",
+	"terminal",
+	"shell",
+	"desktop",
+	"hostname"
+]
+
+allow_commands = false 
+separator = " • "
+
+[os]
+title = "\u001b[31mE R N S T"
+format = "{distro}"
+
+[uptime]
+title = "\u001b[31m"
+
+[packages]
+title = "\u001b[31m󰏖"
+format = "{count} ({manager})"
+
+[memory]
+title = "\u001b[31m󰍛"
+
+[terminal]
+title = "\u001b[31m"
+format = "{name}"
+chase_ssh_pts = false
+
+[shell]
+title = "\u001b[31m"
+format = "{name}"
+show_default_shell = false
+
+[desktop]
+title = "\u001b[31m"
+format = "{desktop}"
+
+[hostname]
+title = "\u001b[31m"
+format = "github.com/ErnstBecker"

@@ -10,6 +10,7 @@ alias pacman-clean="sudo pacman -Rns $(pacman -Qtdq)"
 alias paru-clean="pacman -Qtdq | sudo pacman -Rns -"
 alias clock="tty-clock -c -C 1 -b -s"
 alias battery="acpi"
+alias cf="crabfetch"
 alias ff="fastfetch"
 alias c="clear"
 
