@@ -14,3 +14,10 @@ end, {})
 vim.keymap.set('n', '<leader>gd', ':Gitsigns preview_hunk<CR>', {})
 vim.keymap.set('n', '<leader>gb', ':Gitsigns toggle_current_line_blame<CR>', {})
 
+vim.keymap.set('i', '<Tab>', function()
+	if require("blink.cmp").is_visible() then
+		require("blink.cmp").accept()
+	else
+		return '<Tab>'
+	end
+end, { expr = true })
