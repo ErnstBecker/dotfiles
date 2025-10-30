@@ -9,7 +9,7 @@ super + f
   kitty ranger
 
 super + @space
-	zsh $HOME/dotfiles/.config/scripts/rofi.zsh
+	zsh $HOME/dotfiles/.config/scripts/run_rofi.sh
 
 
 super + control + {Left, Right}
