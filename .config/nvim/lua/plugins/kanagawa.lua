@@ -26,8 +26,19 @@ return {
 					light = "lotus"
 				},
 			})
+
 			vim.cmd("colorscheme kanagawa")
-			local highlights = { 'LineNr', 'SignColumn', 'GitSignsAdd', 'GitSignsChange', 'GitSignsDelete' }
+			local highlights = { 
+				'LineNr',
+				'SignColumn',
+				'GitSignsAdd',
+				'GitSignsChange',
+				'GitSignsDelete',
+				'DiagnosticSignError',
+				'DiagnosticSignWarn',
+				'DiagnosticSignInfo',
+				'DiagnosticSignHint'
+			}
 			for _, hl in ipairs(highlights) do
 				local current = vim.api.nvim_get_hl(0, { name = hl })
 				current.bg = nil
