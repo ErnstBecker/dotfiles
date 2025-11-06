@@ -13,8 +13,10 @@ return {
 			})
 			vim.cmd("colorscheme kanagawa")
 
-			local highlights = { 
+			local highlights = {
 				'LineNr',
+				'CursorLine',
+				'CursorLineNr',
 				'SignColumn',
 				'GitSignsAdd',
 				'GitSignsChange',
