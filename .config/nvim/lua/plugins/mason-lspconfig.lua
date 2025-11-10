@@ -8,7 +8,18 @@ return {
 		},
 	},
 	dependencies = {
-		{ "mason-org/mason.nvim", opts = {} },
+		{
+			"mason-org/mason.nvim",
+			opts = {
+				ui = {
+					icons = {
+						package_installed   = "✓",
+						package_pending     = "➜",
+						package_uninstalled = "✗",
+					},
+				},
+			},
+		},
 		"neovim/nvim-lspconfig",
 	},
 }
