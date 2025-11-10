@@ -4,6 +4,9 @@ vim.keymap.set('i', '<Esc>', '<Esc>', { noremap = true })
 vim.keymap.set('n', '<C-a>', 'ggVG', { desc = "Select All" })
 
 vim.keymap.set('n', '<C-f>', '/', { desc = "Search forward" })
+vim.keymap.set('n', '<leader><C-f>', function()
+	require('telescope.builtin').live_grep()
+end, { desc = "Find file searching for words" })
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 
 vim.keymap.set('n', '<C-S-p>', ':Telescope commands<CR>')
