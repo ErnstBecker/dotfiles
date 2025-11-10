@@ -14,6 +14,7 @@ vim.opt.shiftround = true
 vim.opt.list = true
 vim.opt.listchars = { tab = '  ', lead = '·', trail = '·', nbsp = '␣', extends = '…' }
 
+vim.opt.signcolumn = "yes"
 vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.cursorline = true
