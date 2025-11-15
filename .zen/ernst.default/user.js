@@ -5,6 +5,7 @@ user_pref("zen.view.grey-out-inactive-windows", false);
 user_pref("browser.tabs.allow_transparent_browser", true);
 user_pref("zen.theme.content-element-separation", 0);
 user_pref("zen.view.experimental-no-window-controls", true);
+user_pref("apz.overscroll.enabled", false);
 
 // Tabs
 user_pref("zen.tabs.show-newtab-vertical", false);
