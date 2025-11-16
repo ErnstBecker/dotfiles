@@ -36,26 +36,6 @@ return {
 			dashboard.button("q", "  Quit", ":qa<CR>"),
 		}
 
-		vim.api.nvim_set_hl(0, "AlphaRed", { fg = "#ff0043" })
-
-		local ns = vim.api.nvim_create_namespace("alpha_red_words")
-		local targets = { "DIE", "HUMAN" }
-
-		vim.api.nvim_create_autocmd("User", {
-			pattern = "AlphaReady",
-			callback = function()
-				local buf = vim.api.nvim_get_current_buf()
-				for i, line in ipairs(vim.api.nvim_buf_get_lines(buf, 0, -1, false)) do
-					for _, word in ipairs(targets) do
-						local s, e = line:find(word)
-						if s then
-							vim.api.nvim_buf_add_highlight(buf, ns, "AlphaRed", i - 1, s - 1, e)
-						end
-					end
-				end
-			end,
-		})
-
 		dashboard.section.preview = nil
 		alpha.setup(dashboard.opts)
 	end

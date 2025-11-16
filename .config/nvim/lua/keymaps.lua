@@ -38,6 +38,9 @@ vim.keymap.set('n', '<C-S-p>', ':Telescope commands<CR>')
 -- Git
 vim.keymap.set('n', '<leader>gd', ':Gitsigns preview_hunk<CR>')
 
+-- Colorscheme
+vim.keymap.set('n', '<leader><C-t>', ':Themer<CR>')
+
 -- ======= LSP =======
 
 vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>")
