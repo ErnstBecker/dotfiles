@@ -16,3 +16,27 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		vim.lsp.buf.format({ async = false })
 	end,
 })
+
+local pending_theme = nil
+
+vim.api.nvim_create_autocmd("ColorSchemePre", {
+	callback = function(args)
+		pending_theme = args.match
+	end,
+})
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+	callback = function()
+		if pending_theme then
+			local config_path = vim.fn.stdpath("config") .. "/theme.txt"
+			local file = io.open(config_path, "w")
+			if file then
+				file:write(pending_theme)
+				file:close()
+			end
+		end
+		vim.schedule(function()
+			require('configs.transparency').apply()
+		end)
+	end,
+})
