@@ -11,6 +11,10 @@ vim.keymap.set('i', '<Tab>', function()
 	end
 end, { expr = true })
 
+vim.keymap.set('i', '<C-Space>', function()
+	require("blink.cmp").show()
+end)
+
 -- ======= NORMAL MODE =======
 
 -- Navigation and buffers
