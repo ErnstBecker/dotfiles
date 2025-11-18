@@ -7,6 +7,11 @@ return {
 			"lua_ls",
 		},
 	},
+	handlers = {
+		function(server_name)
+			vim.lsp.enable(server_name)
+		end,
+	},
 	dependencies = {
 		{
 			"mason-org/mason.nvim",
