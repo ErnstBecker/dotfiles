@@ -1,7 +1,6 @@
 -- ======= INSERT =======
 
 vim.keymap.set('n', '<Esc>', 'i', { noremap = true })
-vim.keymap.set('i', '<Esc>', '<Esc>', { noremap = true })
 
 vim.keymap.set('i', '<Tab>', function()
 	if require("blink.cmp").is_visible() then
@@ -22,7 +21,7 @@ vim.keymap.set('n', '<C-b>', ':Neotree toggle right<CR>')
 vim.keymap.set('n', '<C-w>', ':bdelete<CR>', { noremap = true, nowait = true })
 vim.keymap.set('n', '<leader>o', ':update<CR> :source<CR>')
 vim.keymap.set('n', '<leader>w', ':write<CR>')
-vim.keymap.set('n', '<leader>q', ':quit<CR>')
+vim.keymap.set('n', '<leader>q', ':quit!<CR>')
 vim.keymap.set('n', '<C-a>', 'ggVG', { desc = "Select All" })
 vim.keymap.set('n', '<C-Tab>', '<Plug>(cokeline-focus-next)')
 
@@ -38,6 +37,7 @@ vim.keymap.set('n', '<C-p>', function()
 	require('telescope.builtin').find_files()
 end)
 vim.keymap.set('n', '<C-S-p>', ':Telescope commands<CR>')
+vim.keymap.set('n', '<leader>gp', ':Telescope git_status<CR>')
 
 -- Git
 vim.keymap.set('n', '<leader>gd', ':Gitsigns preview_hunk<CR>')
