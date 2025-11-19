@@ -17,15 +17,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	end,
 })
 
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "*",
-	callback = function()
-		vim.opt_local.expandtab = false
-		vim.opt_local.tabstop = 2
-		vim.opt_local.shiftwidth = 2
-	end,
-})
-
 local pending_theme = nil
 
 vim.api.nvim_create_autocmd("ColorSchemePre", {
