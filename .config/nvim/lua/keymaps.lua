@@ -14,6 +14,12 @@ vim.keymap.set('i', '<C-Space>', function()
 	require("blink.cmp").show()
 end)
 
+-- ======= VISUAL MODE =======
+
+-- Indentation with tab
+vim.keymap.set('v', '<Tab>', '>gv', { desc = "Indent selection" })
+vim.keymap.set('v', '<S-Tab>', '<gv', { desc = "Unindent selection" })
+
 -- ======= NORMAL MODE =======
 
 -- Navigation and buffers
