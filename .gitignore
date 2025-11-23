@@ -9,8 +9,3 @@ theme.txt
 .zen
 !.zen/ernst.default/chrome/chromeUser.css
 !.zen/ernst.default/user.js
-
-# Firefox
-.mozilla/firefox/ernst.default/*
-!.mozilla/firefox/ernst.default/chrome
-!.mozilla/firefox/ernst.default/user.js
