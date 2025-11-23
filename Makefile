@@ -1,12 +1,12 @@
 MAKEFLAGS += --silent
 
 DOT=https://github.com/ErnstBecker/dotfiles.git
-DOT_SECRETS=git@github.com:ErnstBecker/dotsecrets.git
+DOT_SECRETS=git@github.com:ErnstBecker/secrets.git
 DOT_PAPERS=https://github.com/ErnstBecker/dotpapers.git
 
 DIR=$(HOME)/dotfiles
 MODULES_DIR=$(DIR)/modules
-SECRETS_DIR=$(MODULES_DIR)/dotsecrets
+SECRETS_DIR=$(MODULES_DIR)/secrets
 WALLPAPERS_DIR=$(HOME)/Pictures/wallpapers
 
 .PHONY: get-secrets get-wallpapers get-vencord
