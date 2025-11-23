@@ -2,6 +2,7 @@ history
 btop.log
 lazy-lock.json
 theme.txt
+modules/*
 
 .themes
 
