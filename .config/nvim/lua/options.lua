@@ -1,21 +1,24 @@
+local o = vim.opt
+
 vim.g.mapleader = ' '
 
-vim.opt.clipboard = "unnamedplus"
+o.clipboard = "unnamedplus"
+o.hidden = false
+o.laststatus = 3
+o.autowrite = true
+o.autoread = true
 
-vim.opt.laststatus = 3
-vim.opt.autowrite = true
-vim.opt.autoread = true
+o.expandtab = false
+o.smartindent = true
+o.tabstop = 2
+o.shiftwidth = 2
+o.shiftround = true
 
-vim.opt.expandtab = false
-vim.opt.smartindent = true
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.shiftround = true
-vim.opt.list = true
-vim.opt.listchars = { tab = '  ', lead = '·', trail = '·', nbsp = '␣', extends = '…' }
+o.list = true
+o.listchars = { tab = '  ', lead = '·', trail = '·', nbsp = '␣', extends = '…' }
 
-vim.opt.signcolumn = "yes"
-vim.opt.relativenumber = true
-vim.opt.number = true
-vim.opt.cursorline = true
-vim.opt.cursorlineopt = "number"
+o.signcolumn = "yes"
+o.number = true
+o.relativenumber = true
+o.cursorline = true
+o.cursorlineopt = "number"
