@@ -1,5 +1,5 @@
 source ~/instant-zsh.zsh
-instant-zsh-pre '%n@%m %~%# '
+instant-zsh-pre $'%F{red}ernst%f %F{white}on%f %F{red}~%f\n%F{white}λ%f '
 
 if [[ -z "$XDG_RUNTIME_DIR" ]]; then
 	export XDG_RUNTIME_DIR="/run/user/$(id -u)"
