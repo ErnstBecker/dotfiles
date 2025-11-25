@@ -1,0 +1,36 @@
+[custom.console_title]
+when = "true"
+command = "echo $STARSHIP_SHELL"
+shell = ["bash", "zsh", "fish"]
+
+[username]
+format = "[$user](red) on "
+show_always = true
+
+[directory]
+style = "red"
+format = "[$path]($style)"
+truncate_to_repo = false
+
+[git_branch]
+style = "white"
+format = " [$branch]($style)"
+
+[git_status]
+modified = "*"
+deleted = "*"
+renamed = "*"
+ahead = "⇡"
+behind = "⇣"
+untracked = ""
+format = "[$staged](yellow)[$modified](yellow)[$deleted](red)[$renamed](blue)[$ahead](green)[$behind](red)"
+
+[cmd_duration]
+style = "red"
+min_time = 1000
+format = "\nRun in [$duration]($style)"
+# show_milliseconds = true
+
+[character]
+success_symbol = "λ"
+error_symbol = "λ"

@@ -3,6 +3,10 @@
 #  fastfetch
 # fi
 
+if [[ -z "$XDG_RUNTIME_DIR" ]]; then
+	export XDG_RUNTIME_DIR="/run/user/$(id -u)"
+fi
+
 # ------------------------------
 # Aliases and Keybindings
 # ------------------------------
@@ -20,7 +24,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Oh-My-Posh, zoxide, fzf
 # ------------------------------
 source "${ZINIT_HOME}/zinit.zsh"
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"
+eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"
 
