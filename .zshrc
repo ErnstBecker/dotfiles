@@ -1,3 +1,6 @@
+source ~/instant-zsh.zsh
+instant-zsh-pre '%n@%m %~%# '
+
 if [[ -z "$XDG_RUNTIME_DIR" ]]; then
 	export XDG_RUNTIME_DIR="/run/user/$(id -u)"
 fi
@@ -42,3 +45,5 @@ fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 autoload -Uz compinit && compinit
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+instant-zsh-post
