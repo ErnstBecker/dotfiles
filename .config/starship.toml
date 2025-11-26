@@ -11,7 +11,7 @@ truncate_to_repo = false
 
 [git_branch]
 style = "white"
-format = " [$branch]($style)"
+format = " $branch"
 
 [git_status]
 modified = "*"
@@ -20,7 +20,22 @@ renamed = "*"
 ahead = "⇡"
 behind = "⇣"
 untracked = ""
-format = "[$staged](yellow)[$modified](yellow)[$deleted](red)[$renamed](blue)[$ahead](green)[$behind](red)"
+format = "[$staged](yellow)[$modified](yellow)[$deleted](red)[$renamed](blue)[$ahead](green)[$behind](red) "
+
+[package]
+disabled = true
+
+[golang]
+symbol = "🐹"
+format = "$symbol[$version]($style)"
+
+[rust]
+symbol = "🦀"
+format = "$symbol[$version]($style)"
+
+[ruby]
+symbol = "💎"
+format = "$symbol[$version]($style)"
 
 [cmd_duration]
 style = "red"
