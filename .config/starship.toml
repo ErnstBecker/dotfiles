@@ -26,16 +26,19 @@ format = "[$staged](yellow)[$modified](yellow)[$deleted](red)[$renamed](blue)[$a
 disabled = true
 
 [golang]
-symbol = "🐹"
-format = "$symbol[$version]($style)"
+format = '[🐹 $version]($style) '
 
 [rust]
-symbol = "🦀"
-format = "$symbol[$version]($style)"
+format = '[🦀 $version]($style) '
+
+[python]
+format = '[🐍 $version]($style) '
 
 [ruby]
-symbol = "💎"
-format = "$symbol[$version]($style)"
+format = '[💎 $version]($style) '
+
+[lua]
+format = '[🌙 $version]($style) '
 
 [cmd_duration]
 style = "red"
