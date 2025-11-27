@@ -36,9 +36,9 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 			end
 		end
 		vim.schedule(function()
-			require('configs.transparency').apply()
+			require("configs.transparency").apply()
 		end)
 	end,
 })
 
-vim.cmd [[ au BufDelete * if empty(filter(tabpagebuflist(), '!buflisted(v:val)')) && winnr('$') == 1 | exec 'Alpha' | endif ]]
+vim.cmd [[ au BufDelete * if empty(filter(tabpagebuflist(), "!buflisted(v:val)")) && winnr("$") == 1 | exec "Alpha" | endif ]]

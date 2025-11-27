@@ -1,6 +1,6 @@
 local o = vim.opt
 
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 
 o.clipboard = "unnamedplus"
 o.hidden = false
@@ -15,7 +15,7 @@ o.shiftwidth = 2
 o.shiftround = true
 
 o.list = true
-o.listchars = { tab = '  ', lead = '·', trail = '·', nbsp = '␣', extends = '…' }
+o.listchars = { tab = "  ", lead = "·", trail = "·", nbsp = "␣", extends = "…" }
 
 o.signcolumn = "yes"
 o.number = true

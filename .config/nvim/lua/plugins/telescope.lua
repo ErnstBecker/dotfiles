@@ -1,12 +1,12 @@
 return {
 	{
-		'nvim-telescope/telescope-ui-select.nvim',
+		"nvim-telescope/telescope-ui-select.nvim",
 	},
 	{
-		'nvim-telescope/telescope.nvim',
-		dependencies = { 'nvim-lua/plenary.nvim' },
+		"nvim-telescope/telescope.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
-			require('telescope').setup({
+			require("telescope").setup({
 				defaults = {
 					hidden = true,
 					file_ignore_patterns = {
@@ -20,14 +20,14 @@ return {
 					},
 				},
 				extensions = {
-					['ui-select'] = {
-						require('telescope.themes').get_dropdown({}),
+					["ui-select"] = {
+						require("telescope.themes").get_dropdown({}),
 					},
 				},
 			})
-			local builtin = require('telescope.builtin')
+			local builtin = require("telescope.builtin")
 
-			require('telescope').load_extension('ui-select')
+			require("telescope").load_extension("ui-select")
 		end,
 	},
 }
