@@ -37,7 +37,7 @@ map("n", "<C-f>", "/", { desc = "Search forward" })
 map("n", "<leader><C-f>", function()
 	require("telescope.builtin").live_grep()
 end, { desc = "Find text with Telescope" })
-map("n", "<leader>h", ":nohlsearch<CR>")
+map("n", "<leader><Esc>", ":nohlsearch<CR>")
 
 -- Telescope
 map("n", "<C-p>", function()
@@ -50,7 +50,16 @@ map("n", "<leader>gp", ":Telescope git_status<CR>")
 map("n", "<leader>gd", ":Gitsigns preview_hunk<CR>")
 
 -- Colorscheme
-map("n", "<leader><C-t>", ":Themer<CR>")
+map("n", "<leader><C-t>", function ()
+	require("telescope.builtin").colorscheme {
+		ignore_builtins = true,
+		layout_strategy = "vertical",
+		layout_config = {
+			width = 0.2,
+			height = 0.5
+		}
+	}
+end)
 
 -- ======= LSP =======
 

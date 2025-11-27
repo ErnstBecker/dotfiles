@@ -11,6 +11,7 @@ return {
 					hidden = true,
 					file_ignore_patterns = {
 						"%.git/",
+						"%.vscode/",
 					},
 				},
 				pickers = {
@@ -25,7 +26,6 @@ return {
 					},
 				},
 			})
-			local builtin = require("telescope.builtin")
 
 			require("telescope").load_extension("ui-select")
 		end,
