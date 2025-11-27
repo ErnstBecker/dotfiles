@@ -35,9 +35,6 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 				file:close()
 			end
 		end
-		vim.schedule(function()
-			require("configs.transparency").apply()
-		end)
 	end,
 })
 
