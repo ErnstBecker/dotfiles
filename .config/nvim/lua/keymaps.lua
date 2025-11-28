@@ -72,3 +72,47 @@ map("n", "[d", vim.diagnostic.goto_prev)
 map("n", "]d", vim.diagnostic.goto_next)
 map("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>")
 map("n", "K", vim.lsp.buf.hover)
+
+-- ======= DEBUG =======
+
+map("n", "<C-h>", function() require("dap").step_out() end)
+map("n", "<C-j>", function() require("dap").step_over() end)
+map("n", "<C-k>", function() require("dap").continue() end)
+map("n", "<C-l>", function() require("dap").step_into() end)
+map("n", "<leader>a", function() require("dap").toggle_breakpoint() end)
+
+map("n", "<leader>s", function()
+	local current_ft = vim.bo.filetype
+
+	if current_ft == "dapui_scopes" then
+		local wins = vim.api.nvim_list_wins()
+		for _, win in ipairs(wins) do
+			local buf = vim.api.nvim_win_get_buf(win)
+			local ft = vim.api.nvim_buf_get_option(buf, "filetype")
+			if ft ~= "dapui_scopes" and ft ~= "dapui_breakpoints" and ft ~= "dap-repl" then
+				vim.api.nvim_set_current_win(win)
+				return
+			end
+		end
+	else
+		vim.cmd("wincmd l")
+		vim.cmd("wincmd k")
+	end
+end)
+
+map("n", "<leader>b", function()
+	local current_buftype = vim.bo.buftype
+	local current_ft = vim.bo.filetype
+
+	if current_buftype == "nofile" or current_ft == "dapui_scopes" or current_ft == "dapui_breakpoints" or current_ft == "dap-repl" then
+		local main_win = vim.fn.win_findbuf(vim.fn.bufnr("#"))[1]
+		if not main_win then
+			vim.cmd("wincmd h")
+		else
+			vim.api.nvim_set_current_win(main_win)
+		end
+	else
+		vim.cmd("wincmd l")
+		vim.cmd("wincmd j")
+	end
+end)

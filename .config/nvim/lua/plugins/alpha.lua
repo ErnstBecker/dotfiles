@@ -36,7 +36,6 @@ return {
 			dashboard.button("q", "  Quit", ":qa<CR>"),
 		}
 
-		dashboard.section.preview = nil
 		alpha.setup(dashboard.opts)
 	end
 };
