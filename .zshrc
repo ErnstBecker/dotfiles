@@ -1,4 +1,4 @@
-source ~/instant-zsh.zsh
+source ~/.instant.zsh
 instant-zsh-pre $'%F{red}ernst%f %F{white}on%f %F{red}~%f\n%F{white}λ%f '
 
 if [[ -z "$XDG_RUNTIME_DIR" ]]; then
@@ -13,7 +13,7 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d "$ZINIT_HOME" ] && mkdir -p "$(dirname $ZINIT_HOME)" && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
-# Oh-My-Posh, zoxide, fzf
+# starship, zoxide, fzf
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"
