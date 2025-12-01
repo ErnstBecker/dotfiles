@@ -7,6 +7,7 @@ return {
 				"gopls",
 				"lua_ls",
 			},
+			automatic_installation = true
 		},
 		handlers = {
 			function(server_name)
