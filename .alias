@@ -38,8 +38,7 @@ alias ...="cd ../.."
 alias gi="git init"
 alias gcl="git clone"
 alias gs="git status --short"
-alias gd='git diff --output-indicator-new=" " --output-indicator-old=" "'
-alias gds='gd --staged'
+alias gd="git diff"
 alias gl='git log --graph --all --pretty=format:"%C(magenta)%H%n%C(green)%an:  %ar%C(blue)  %C(cyan)%D%n%s%n"'
 
 # Add/Commit
