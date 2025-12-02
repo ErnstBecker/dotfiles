@@ -1,3 +1,4 @@
+format = "$username$directory$git_branch$git_status$cmd_duration\n$character"
 add_newline = false
 
 [username]
@@ -22,30 +23,14 @@ behind = "⇣"
 untracked = ""
 format = "[$staged](yellow)[$modified](yellow)[$deleted](red)[$renamed](blue)[$ahead](green)[$behind](red) "
 
-[package]
-disabled = true
-
-[golang]
-format = '[🐹 $version]($style) '
-
-[rust]
-format = '[🦀 $version]($style) '
-
-[python]
-format = '[🐍 $version]($style) '
-
-[ruby]
-format = '[💎 $version]($style) '
-
-[lua]
-format = '[🌙 $version]($style) '
-
 [cmd_duration]
 style = "red"
 min_time = 1000
 format = "\nRun in [$duration]($style)"
-# show_milliseconds = true
 
 [character]
 success_symbol = "λ"
 error_symbol = "λ"
+vimcmd_symbol = "A"
+vimcmd_replace_symbol = "B"
+vimcmd_visual_symbol = "C"
