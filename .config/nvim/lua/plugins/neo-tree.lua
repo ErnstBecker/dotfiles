@@ -10,7 +10,10 @@ return {
 				show_hidden_count = true,
 				hide_dotfiles = false,
 				hide_gitignored = false,
-				never_show = {},
+				never_show = {
+					".git",
+					".vscode"
+				},
 			},
 			window = {
 				mappings = {
@@ -32,4 +35,3 @@ return {
 		}
 	}
 }
-
