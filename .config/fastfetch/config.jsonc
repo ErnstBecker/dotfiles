@@ -1,57 +1,64 @@
 {
-  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-  "logo": {
-    "type": "kitty-direct",
-    "source": "${HOME}/.config/fastfetch/images/kitty.png"
-  },
-  "display": {
-    "separator": " • "
-  },
-  "modules": [
-    {
-      "type": "os",
-      "format": "{2}",
-      "key": "\u001b[31mE R N S T"
-    },
-    {
-      "type": "break"
-    },
-    {
-      "type": "uptime",
-      "key": "\u001b[31m"
-    },
-    {
-      "type": "memory",
-      "key": "\u001b[31m󰍛"
-    },
-    {
-      "type": "packages",
-      "key": "\u001b[31m󰏖"
-    },
-    {
-      "type": "terminal",
-      "format": "{1}",
-      "key": "\u001b[31m"
-    },
-    {
-      "type": "shell",
-      "format": "{1}",
-      "key": "\u001b[31m"
-    },
-    {
-      "type": "wm",
-      "format": "{2}",
-      "key": "\u001b[31m"
-    },
-    {
-      "type": "custom",
-      "format": "github.com/ernstbecker",
-      "key": "\u001b[31m"
-    },
-    {
-      "type": "custom",
-      "format": "\u001b[30m▂▂▂ \u001b[31m▂▂▂ \u001b[32m▂▂▂ \u001b[33m▂▂▂ \u001b[34m▂▂▂ \u001b[35m▂▂▂ \u001b[36m▂▂▂ \u001b[37m▂▂▂",
-      "key": " "
-    }
-  ]
+	"$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+	"logo": {
+		"type": "small",
+		"padding": {
+			"top": 2,
+			"left": 2
+		},
+		"color": {
+			"1": "red",
+			"2": "white"
+		}
+	},
+	"display": {
+		"separator": " • "
+	},
+	"modules": [
+		{
+			"type": "os",
+			"format": "{2}",
+			"key": "\u001b[31mE R N S T"
+		},
+		{
+			"type": "break"
+		},
+		{
+			"type": "uptime",
+			"key": "\u001b[31m"
+		},
+		{
+			"type": "memory",
+			"key": "\u001b[31m󰍛"
+		},
+		{
+			"type": "packages",
+			"key": "\u001b[31m󰏖"
+		},
+		{
+			"type": "terminal",
+			"format": "{1}",
+			"key": "\u001b[31m"
+		},
+		{
+			"type": "shell",
+			"format": "{1}",
+			"key": "\u001b[31m"
+		},
+		{
+			"type": "wm",
+			"format": "{2}",
+			"key": "\u001b[31m"
+		},
+		{
+			"type": "custom",
+			"format": "github.com/ernstbecker",
+			"key": "\u001b[31m"
+		},
+		{
+			"type": "custom",
+			"format": "\u001b[30m▂▂▂ \u001b[31m▂▂▂ \u001b[32m▂▂▂ \u001b[33m▂▂▂ \u001b[34m▂▂▂ \u001b[35m▂▂▂ \u001b[36m▂▂▂ \u001b[37m▂▂▂",
+				"key": " "
+		}
+			]
 }
