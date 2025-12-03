@@ -1,5 +1,6 @@
 require("options")
 require("keymaps")
 require("autocmds")
+require("newcmds")
 require("configs.lazyvim")
 require("configs.theme")
