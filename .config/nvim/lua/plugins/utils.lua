@@ -9,5 +9,8 @@ return {
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		config = true
+	},
+	{
+		'saghen/blink.indent',
 	}
 }
