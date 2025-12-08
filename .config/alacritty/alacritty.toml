@@ -29,7 +29,7 @@ program = "/bin/zsh"
 
 [window]
 decorations = "none"
-opacity = 0.95 
+opacity = 0.98
 title = "Alacritty"
 
 [window.padding]
