@@ -10,7 +10,4 @@ return {
 		event = "InsertEnter",
 		config = true
 	},
-	{
-		'saghen/blink.indent',
-	}
 }
