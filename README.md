@@ -22,21 +22,21 @@ Programs' configuration files that you will find in this repository:
 | Type               | Name                        |
 | ------------------ | --------------------------- |
 | OS                 | Arch Linux                  |
-| Terminal           | Ghostty & Alacritty & Kitty |
+| Terminal           | Alacritty & Ghostty & Kitty |
 | Shell              | Zsh                         |
 | Video Player       | mpv                         |
 | Launcher           | Rofi                        |
-| IDE                | VisualStudioCode            |
-| ZSH Prompt         | OhMyPosh                    |
+| Text Editor        | Neovim & VSCode             |
+| ZSH Prompt         | Starship                    |
 | ZSH Plugin Manager | Zinit                       |
-| File Manager       | Yazi                        |
+| File Manager       | Nautilus & Yazi             |
 
 ## 📸 Screenshots
 **⚠️ Illustrative images do not represent the final result! ⚠️**
 
-![Desktop&Terminal](info/Screenshots/A.png)
-![Desktop&Terminal&Cava&Pipes](info/Screenshots/B.png)
-![VisualStudioCode&Terminal&Cava](info/Screenshots/C.png)
+![Desktop&Terminal](info/screenshot_1.png)
+![Desktop&Terminal&Cava&Pipes](info/screenshot_2.png)
+![Editor&Terminal&Cava](info/screenshot_3.png)
 
 ## 🎨 Themes
 | Program  |    Theme      |
