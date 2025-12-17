@@ -1,12 +1,10 @@
-<!-- .config -->
-bspwm
-
 <!-- Git -->
 .git
 .gitignore
 README.md
 
+<!-- .config -->
+bspwm
+
 <!-- Folders -->
 modules
-scripts
-info
