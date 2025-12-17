@@ -31,12 +31,8 @@ Programs' configuration files that you will find in this repository:
 | ZSH Plugin Manager | Zinit                       |
 | File Manager       | Nautilus & Yazi             |
 
-## 📸 Screenshots
-**⚠️ Illustrative images do not represent the final result! ⚠️**
-
-![Desktop&Terminal](info/screenshot_1.png)
-![Desktop&Terminal&Cava&Pipes](info/screenshot_2.png)
-![Editor&Terminal&Cava](info/screenshot_3.png)
+<!-- ## 📸 Screenshots -->
+<!-- **⚠️ Illustrative images do not represent the final result! ⚠️** -->
 
 ## 🎨 Themes
 | Program  |    Theme      |
