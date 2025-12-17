@@ -1,9 +1,5 @@
 [general]
-import = ["/home/ernst/.config/alacritty/themes/zeists.conf"]
-
-[env]
-TERM = "xterm-256color"
-W3MIMGDISPLAY = "/usr/lib/w3m/w3mimgdisplay"
+import = ["./themes/zeists.conf"]
 
 [font]
 size = 14.0
@@ -31,10 +27,7 @@ program = "/bin/zsh"
 decorations = "none"
 opacity = 0.98
 title = "Alacritty"
-
-[window.padding]
-x = 20
-y = 20
+padding = { x = 20, y = 20 }
 
 [cursor]
 style = "Beam"
