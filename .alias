@@ -4,20 +4,18 @@
 
 # █░░  ▄▀█  ▀▀█  █░█
 # █▄▄  █▀█  █▄▄   █
-alias clear-history="rm -f ~/.config/zsh/zsh_history && kill -9 $$"
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias pacman-clean="sudo pacman -Rns $(pacman -Qtdq)"
 alias paru-clean="pacman -Qtdq | sudo pacman -Rns -"
 alias clock="tty-clock -C 1 -c -s -b"
 alias battery="acpi"
-alias cf="crabfetch"
 alias ff="fastfetch"
 alias c="clear"
 
 
 # █▀▀  █░█  █▀▀  ▀█▀  █▀█  █▄ ▄█
 # █▄▄  █▄█  ▄▄█  ░█░  █▄█  █░▀░█
-alias cw="~/dotfiles/.config/scripts/change_wpp.sh"
+alias cw="change_wpp.sh"
 
 
 # ▄▀█  █░░  ▀█▀
