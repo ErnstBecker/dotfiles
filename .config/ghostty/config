@@ -1,27 +1,22 @@
-# Default Shell
-command = /bin/zsh
+theme = zeists.conf
 
 # Configs
 confirm-close-surface = false
 resize-overlay = never
 
 # Font
+font-size = 14
 font-family = CaskaydiaCove NF
 font-family-bold = CaskaydiaCove NF Bold
 font-family-italic = CaskaydiaCove NF Italic
 font-family-bold-italic = CaskaydiaCove NF Bold Italic
-font-size = 14
-font-style = Normal
+
+# Window
+window-padding-x = 5
+window-padding-y = 1
+window-decoration = false
 
 # Cursor
 cursor-style = bar
-cursor-style-blink = true 
+cursor-style-blink = true
 shell-integration-features = no-cursor
-
-# Window
-window-padding-x = 20 
-window-padding-y = 20
-window-decoration = false 
-
-# Theme
-theme = zeists.conf
