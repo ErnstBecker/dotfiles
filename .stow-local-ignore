@@ -3,8 +3,5 @@
 .gitignore
 README.md
 
-<!-- .config -->
-bspwm
-
 <!-- Folders -->
 modules
