@@ -10,6 +10,7 @@ font-family = CaskaydiaCove NF
 font-family-bold = CaskaydiaCove NF Bold
 font-family-italic = CaskaydiaCove NF Italic
 font-family-bold-italic = CaskaydiaCove NF Bold Italic
+disable_ligatures never
 
 # Window
 window-padding-x = 5
