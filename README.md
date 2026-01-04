@@ -22,6 +22,7 @@ Programs' configuration files that you will find in this repository:
 | Type               | Name                        |
 | ------------------ | --------------------------- |
 | OS                 | Arch Linux                  |
+| WM                 | Hyprland                    |
 | Terminal           | Alacritty & Ghostty & Kitty |
 | Shell              | Zsh                         |
 | Video Player       | mpv                         |
