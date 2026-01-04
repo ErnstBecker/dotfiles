@@ -36,6 +36,17 @@ return {
 			dashboard.button("q", "  Quit", ":qa<CR>"),
 		}
 
+		vim.api.nvim_create_autocmd("User", {
+			pattern = "AlphaReady",
+			callback = function()
+				vim.api.nvim_create_autocmd("WinResized", {
+					callback = function()
+						pcall(require("alpha").redraw)
+					end,
+				})
+			end,
+		})
+
 		alpha.setup(dashboard.opts)
 	end
 };
