@@ -12,7 +12,3 @@ italic = { family = "CaskaydiaCove Nerd Font" }
 decorations = "none"
 opacity = 0.98
 padding = { x = 5, y = 1 }
-
-[cursor]
-smooth_motion_factor = 0.9
-smooth_motion_spring = 0.5
