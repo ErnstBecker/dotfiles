@@ -7,7 +7,8 @@
   <a href="#-about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-screenshots">Screenshots</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-themes">Themes</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-installation">Installation</a>
+  <a href="#-installation">Installation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-help">Help</a>
 </div>
 
 ## 🏮 About
@@ -54,6 +55,6 @@ Quick install:
 git clone https://github.com/ernstbecker/dotfiles && cd dotfiles && stow .
 ```
 
-## 🆘 Need help?
+## 🆘 Help
 - Create an [issue](https://github.com/ErnstBecker/dotfiles/issues/new)
 - Read the [stow](https://www.gnu.org/software/stow/manual/stow.html) manual
