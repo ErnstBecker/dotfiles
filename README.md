@@ -11,7 +11,6 @@
 </div>
 
 ## 🏮 About
-
 > [!WARNING]
 > Don’t blindly use my settings unless you understand what they entail. Use at your own risk!
 
@@ -23,37 +22,38 @@ Programs' configuration files that you will find in this repository:
 | ------------------ | --------------------------- |
 | OS                 | Arch Linux                  |
 | WM                 | Hyprland                    |
-| Terminal           | Alacritty & Ghostty & Kitty |
+| Terminal           | Alacritty & Kitty           |
 | Shell              | Zsh                         |
-| Video Player       | mpv                         |
 | Launcher           | Rofi                        |
-| Text Editor        | Neovim & VSCode             |
+| Top Bar            | Quickshell                  |
+| Text Editor        | Neovim                      |
 | ZSH Prompt         | Starship                    |
 | ZSH Plugin Manager | Zinit                       |
 | File Manager       | Nautilus & Yazi             |
+| Video Player       | mpv                         |
 
-<!-- ## 📸 Screenshots -->
-<!-- **⚠️ Illustrative images do not represent the final result! ⚠️** -->
+## 📸 Screenshots
+**⚠️ Illustrative images do not represent the final result! ⚠️**
+![Desktop with terminal](./demo/1.png)
+![Browser](./demo/2.png)
+![Browser and Neovim](./demo/3.png)
 
 ## 🎨 Themes
 | Program  |    Theme      |
 | -------- | ------------- |
 | Font     | CascaydiaCove |
 | Ghostty  | Zeists        |
-| VSCode   | Zeists        |
 | Icons    |               |
 | Folders  |               |
 | Cursors  | [Colloid-Cursors](https://github.com/vinceliuice/Colloid-icon-theme/tree/main/cursors) |
 
 ## 💾 Installation
-### Dependencies
-For the installation of programs dependencies (fonts, themes, programs, etc.). You can run the script.
-```bash
-chmod +x Scripts/install.zsh
-zsh Scripts/install.zsh
-```
 ### Dotfiles
-If you need help with the stow command, you can read [here](https://www.gnu.org/software/stow/manual/stow.html).
-```bash
-stow .
+Quick install:
+```sh
+git clone https://github.com/ernstbecker/dotfiles && cd dotfiles && stow .
 ```
+
+## 🆘 Need help?
+- Create an [issue](https://github.com/ErnstBecker/dotfiles/issues/new)
+- Read the [stow](https://www.gnu.org/software/stow/manual/stow.html) manual
