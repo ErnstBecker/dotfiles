@@ -11,6 +11,7 @@ user_pref("browser.tabs.inTitlebar", 0);
 // Tabs
 user_pref("zen.tabs.show-newtab-vertical", false);
 user_pref("zen.pinned-tab-manager.restore-pinned-tabs-to-pinned-url", true);
+user_pref("browser.ctrlTab.sortByRecentlyUsed", true);
 
 
 // Theme
