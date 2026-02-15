@@ -1,0 +1,40 @@
+[
+	{
+		// INSERT MODE
+		"context": "Editor && vim_mode == insert",
+		"bindings": {
+			"j j": "vim::NormalBefore",
+		},
+	},
+	{
+		// NORMAL MODE
+		"context": "Editor && vim_mode == normal",
+		"bindings": {
+			"escape": "vim::InsertBefore",
+			"ctrl-b": "workspace::ToggleRightDock",
+			"g d": "editor::GoToDefinition",
+			"space ctrl-f": "pane::DeploySearch",
+		},
+	},
+	{
+		// PROJECT PANEL FOCUSED
+		// Toggle hide project panel
+		"context": "ProjectPanel && not_editing",
+		"bindings": {
+			"escape": "workspace::ToggleRightDock",
+			"ctrl-b": "workspace::ToggleRightDock",
+			"q": "workspace::ToggleRightDock",
+			"s": ["workspace::SendKeystrokes", "enter ctrl-b"],
+		},
+	},
+	{
+		// GIT PANEL FOCUSED
+		// Close and go back to default project panel
+		"context": "GitPanel",
+		"bindings": {
+			"escape": ["workspace::SendKeystrokes", "ctrl-shift-e ctrl-b"],
+			"ctrl-b": ["workspace::SendKeystrokes", "ctrl-shift-e ctrl-b"],
+			"q": ["workspace::SendKeystrokes", "ctrl-shift-e ctrl-b"],
+		},
+	},
+]

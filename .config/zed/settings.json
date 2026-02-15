@@ -1,0 +1,146 @@
+{
+	// Controls
+	"base_keymap": "VSCode",
+
+	// VIM
+	"vim_mode": true,
+	"relative_line_numbers": "enabled",
+	"vim": {
+		"highlight_on_yank_duration": 0,
+		"use_system_clipboard": "always",
+	},
+
+	// Fonts & Typography
+	"ui_font_family": ".SystemUIFont",
+	"buffer_font_family": "CaskaydiaCove Nerd Font",
+	"ui_font_weight": 500.0,
+	"buffer_font_weight": 500.0,
+	"ui_font_size": 16.0,
+	"buffer_font_size": 16.0,
+
+	// Theme & Icons
+	"icon_theme": "Symbols Icon Theme",
+	"tabs": {
+		"file_icons": true,
+	},
+	"theme": {
+		"mode": "dark",
+		"light": "Kanagawa Lotus",
+		"dark": "Kanagawa Dragon",
+	},
+
+	// Visual
+	"window_decorations": "server",
+	"show_whitespaces": "boundary",
+	"current_line_highlight": "none",
+	"line_indicator_format": "short",
+	"rounded_selection": false,
+	"cursor_blink": false,
+
+	// Formatting
+	"tab_size": 2,
+	"hard_tabs": true,
+	"formatter": "auto",
+	"format_on_save": "on",
+
+	// Autocomplete & Inlay Hints
+	"show_edit_predictions": true,
+	"inlay_hints": {
+		"enabled": true,
+	},
+
+	// Session Management
+	"session": {
+		"trust_all_worktrees": true,
+	},
+
+	// Popovers & Guides
+	"hover_popover_enabled": false,
+	"indent_guides": {
+		"enabled": false,
+	},
+
+	// Gutter & Minimap & Scrollbar
+	"gutter": {
+		"folds": false,
+	},
+	"minimap": {
+		"thumb_border": "none",
+	},
+	"scrollbar": {
+		"show": "never",
+	},
+
+	// Tabs & Toolbars
+	// Top Bar
+	"title_bar": {
+		"show_project_items": true,
+		"show_user_picture": false,
+		"show_branch_icon": false,
+		"show_branch_name": false,
+		"show_user_menu": false,
+		"show_sign_in": false,
+		"show_menus": false,
+	},
+	"tab_bar": {
+		"show_nav_history_buttons": false,
+		"show_tab_bar_buttons": false,
+	},
+	"toolbar": {
+		"selections_menu": false,
+		"quick_actions": false,
+		"breadcrumbs": false,
+	},
+	// Bottom Bar
+	"status_bar": {
+		"line_endings_button": false,
+	},
+	// Project Panel & Sidebar
+	"project_panel": {
+		"dock": "right",
+		"button": false,
+		"entry_spacing": "standard",
+		"indent_guides": {
+			"show": "never",
+		},
+	},
+	// Other Panels and Buttons
+	"terminal": {
+		"button": false,
+		"alternate_scroll": "off",
+		"blinking": "off",
+		"toolbar": {
+			"breadcrumbs": false,
+		},
+	},
+	"outline_panel": {
+		"dock": "right",
+		"button": false,
+	},
+	"git_panel": {
+		"dock": "right",
+		"button": false,
+		"tree_view": true,
+	},
+	"debugger": {
+		"dock": "bottom",
+		"button": false,
+	},
+	"collaboration_panel": {
+		"dock": "bottom",
+		"button": false,
+	},
+	"global_lsp_settings": {
+		"button": false,
+	},
+	"notification_panel": {
+		"button": false,
+	},
+
+	// Privacy & Telemetry
+	"disable_ai": true,
+	"telemetry": {
+		"diagnostics": false,
+		"metrics": false,
+	},
+}
