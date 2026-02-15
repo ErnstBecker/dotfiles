@@ -12,7 +12,7 @@ return {
 
 				lualine_x = {
 					"diagnostics",
-					"fileformat",
+					-- "fileformat",
 					"filetype",
 				},
 
