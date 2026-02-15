@@ -22,3 +22,4 @@ o.number = true
 o.relativenumber = true
 o.cursorline = true
 o.cursorlineopt = "number"
+o.cmdheight = 0
