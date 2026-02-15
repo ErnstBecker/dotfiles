@@ -1,0 +1,9 @@
+[
+	{
+		"label": "Golang Debug",
+		"adapter": "Delve",
+		"request": "launch",
+		"mode": "debug",
+		"program": "$ZED_WORKTREE_ROOT",
+	},
+]
