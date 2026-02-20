@@ -5,6 +5,7 @@ theme.txt
 modules/*
 
 # Zen Browser
-.zen
-!.zen/ernst.default/chrome/chromeUser.css
-!.zen/ernst.default/user.js
+zen
+!zen/profiles.ini
+!zen/ernst.default/chrome/chromeUser.css
+!zen/ernst.default/user.js
