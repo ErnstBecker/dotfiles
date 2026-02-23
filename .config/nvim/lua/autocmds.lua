@@ -39,3 +39,6 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 })
 
 vim.cmd [[ au BufDelete * if empty(filter(tabpagebuflist(), "!buflisted(v:val)")) && winnr("$") == 1 | exec "Alpha" | endif ]]
+
+vim.cmd [[ autocmd RecordingEnter * set cmdheight=1 ]]
+vim.cmd [[ autocmd RecordingLeave * set cmdheight=0 ]]
