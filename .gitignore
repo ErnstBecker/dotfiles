@@ -9,3 +9,8 @@ zen
 !zen/profiles.ini
 !zen/ernst.default/chrome/chromeUser.css
 !zen/ernst.default/user.js
+
+# Tmux
+tmux
+!tmux/tmux.conf
+!tmux/plugins/.gitkeep
