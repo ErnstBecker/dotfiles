@@ -1,7 +1,8 @@
 /* --- Layout & UI Cleanup --- */
 /* Hide workspace tab indicator and overflow button */
 vbox.zen-workspace-tabs-section.zen-current-workspace-indicator,
-#nav-bar-overflow-button {
+#nav-bar-overflow-button,
+#zen-create-new-button {
 	display: none !important;
 }
 
