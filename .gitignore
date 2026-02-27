@@ -7,8 +7,8 @@ modules/*
 # Zen Browser
 zen
 !zen/profiles.ini
-!zen/ernst.default/chrome/chromeUser.css
-!zen/ernst.default/user.js
+!zen/default/chrome/chromeUser.css
+!zen/default/user.js
 
 # Tmux
 tmux
