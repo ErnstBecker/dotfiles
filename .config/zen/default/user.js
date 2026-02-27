@@ -12,7 +12,7 @@ user_pref("zen.theme.accent-color", "#000");
 // DEVTOOLS
 user_pref("devtools.chrome.enabled", true)
 user_pref("devtools.debugger.remote-enabled", true);
-user_pref("browser.aboutConfig.showWarning", false)
+user_pref("browser.aboutConfig.showWarning", false);
 
 
 // GENERAL CONFIGS
@@ -29,6 +29,7 @@ user_pref("ui.systemUsesDarkTheme", 1);
 user_pref("browser.urlbar.suggest.bookmark", true);
 user_pref("browser.urlbar.suggest.quicksuggest.nonsponsored", false);
 user_pref("browser.urlbar.suggest.quicksuggest.sponsored", false);
+user_pref("browser.search.suggest.enabled.private", false);
 user_pref("browser.urlbar.suggest.recentsearches", false);
 user_pref("browser.urlbar.quickactions.enabled", false);
 user_pref("browser.urlbar.groupLabels.enabled", false);
@@ -37,12 +38,13 @@ user_pref("browser.urlbar.suggest.searches", false);
 user_pref("browser.urlbar.suggest.trending", false);
 user_pref("browser.urlbar.suggest.history", false);
 user_pref("browser.urlbar.suggest.engines", false);
+user_pref("browser.search.suggest.enabled", false);
 // Bookmarks
 user_pref("browser.toolbars.bookmarks.visibility", "never");
 user_pref("browser.bookmarks.restore_default_bookmarks", false);
 // Search
-user_pref("browser.search.defaultenginename", "SearXNG")
-user_pref("browser.search.separatePrivateDefault", false)
+user_pref("browser.search.defaultenginename", "SearXNG");
+user_pref("browser.search.separatePrivateDefault", false);
 // Tabs
 user_pref("browser.ctrlTab.sortByRecentlyUsed", true);
 
@@ -60,16 +62,21 @@ user_pref("permissions.default.desktop-notification", 2);
 user_pref("dom.security.https_only_mode", true)
 
 // PRIVACY
-user_pref("browser.search.region", "US")
+user_pref("browser.search.region", "US");
+user_pref("network.cookie.cookieBehavior", 1);
+user_pref("geo.enabled", false);
+user_pref("geo.provider.network.url", "data:application/json,{\"error\": \"Geolocation disabled by user preference\"}");
 
 // TELEMETRY
 user_pref("toolkit.telemetry.enabled", false);
 user_pref("toolkit.telemetry.unified", false);
 user_pref("datareporting.healthreport.uploadEnabled", false);
+user_pref("datareporting.usage.uploadEnabled", false);
+user_pref("dom.private-attribution.submission.enabled", false);
 
 // Extensions
 // Disable extensions/themes recommendations
-user_pref("extensions.htmlaboutaddons.recommendations.enabled", false)
+user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);
 user_pref("extensions.recommendations.themeRecommendationUrl", false);
 user_pref("extensions.getAddons.showPane", false);
 user_pref("extensions.getAddons.discovery.api_url", "");
@@ -92,8 +99,9 @@ user_pref("browser.ml.chat.enabled", false);
 // Disable Promos
 user_pref("browser.promo.focus.enabled", false);
 user_pref("browser.promo.pin.enabled", false);
-// Disable Third-party Cookies
-user_pref("network.cookie.cookieBehavior", 1);
+user_pref("browser.promo.cookiebanners.enabled", false);
 // Disable Experimental Features
+user_pref("app.shield.optoutstudies.enabled", false);
+user_pref("experiments.enabled", false);
 user_pref("browser.preferences.experimental", false);
 user_pref("browser.preferences.experimental.hidden", true);
