@@ -24,6 +24,7 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("extensions.activeThemeID", "firefox-compact-dark@mozilla.org");
 user_pref("layout.css.prefers-color-scheme.content-override", 0);
 user_pref("ui.systemUsesDarkTheme", 1);
+user_pref("browser.download.autohideButton", true);
 
 // Address Bar
 user_pref("browser.urlbar.suggest.bookmark", true);
@@ -49,6 +50,7 @@ user_pref("browser.search.separatePrivateDefault", false);
 user_pref("browser.ctrlTab.sortByRecentlyUsed", true);
 
 // PERFORMANCE
+user_pref("media.hardware-video-decoding.force-enabled", true);
 user_pref("gfx.webrender.all", true);
 user_pref("gfx.webrender.compositor", true);
 user_pref("layers.acceleration.force-enabled", true);
@@ -62,10 +64,13 @@ user_pref("permissions.default.desktop-notification", 2);
 user_pref("dom.security.https_only_mode", true)
 
 // PRIVACY
+user_pref("permissions.isolateBy.userContext", true);
 user_pref("browser.search.region", "US");
 user_pref("network.cookie.cookieBehavior", 1);
 user_pref("geo.enabled", false);
 user_pref("geo.provider.network.url", "data:application/json,{\"error\": \"Geolocation disabled by user preference\"}");
+user_pref("breakpad.reportURL", "");
+user_pref("browser.tabs.crashReporting.sendReport", false);
 
 // TELEMETRY
 user_pref("toolkit.telemetry.enabled", false);
