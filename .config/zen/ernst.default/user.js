@@ -17,6 +17,7 @@ user_pref("browser.ctrlTab.sortByRecentlyUsed", true);
 // Theme
 // Enable userChrome.css
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+user_pref("zen.theme.accent-color", "#000");
 
 // Dark Theme
 user_pref("extensions.activeThemeID", "firefox-compact-dark@mozilla.org");

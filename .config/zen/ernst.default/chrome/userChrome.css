@@ -1,25 +1,40 @@
-/* Disable workspace tab */
-/* More tools button */
+/* --- Layout & UI Cleanup --- */
+/* Hide workspace tab indicator and overflow button */
 vbox.zen-workspace-tabs-section.zen-current-workspace-indicator,
 #nav-bar-overflow-button {
 	display: none !important;
 }
 
-/* Better unloaded tabs */
+/* Hide status bar */
+#statuspanel {
+	display: none !important;
+}
+
+/* Hide back/forward buttons when disabled */
+:root:not([customizing]) #back-button[disabled],
+:root:not([customizing]) #forward-button[disabled] {
+	display: none !important;
+}
+
+/* --- Tabs --- */
+/* Dim unloaded (pending) tabs */
 .tabbrowser-tab[pending="true"] {
 	filter: grayscale(1);
 	opacity: 0.5;
 }
 
-/* Disable back-forward when not using */
-:root:not([customizing]) #back-button[disabled] {
-	display: none !important;
-}
-:root:not([customizing]) #forward-button[disabled] {
-	display: none !important;
+/* On hover: replace icon with close button (positioned left) */
+.tab-content:hover {
+	gap: 5.3px;
+
+	& .tab-icon-stack { display: none; }
+	& .tab-close-button { order: -1; }
 }
 
-/* Disable status bar */
-#statuspanel {
+/* Selected tab: hide close button, reveal on hover */
+.tab-content[selected] .tab-close-button {
 	display: none !important;
+}
+.tab-content[selected]:hover .tab-close-button {
+	display: inherit !important;
 }
