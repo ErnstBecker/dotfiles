@@ -4,3 +4,22 @@ vbox.zen-workspace-tabs-section.zen-current-workspace-indicator,
 #nav-bar-overflow-button {
 	display: none !important;
 }
+
+/* Better unloaded tabs */
+.tabbrowser-tab[pending="true"] {
+	filter: grayscale(1);
+	opacity: 0.5;
+}
+
+/* Disable back-forward when not using */
+:root:not([customizing]) #back-button[disabled] {
+	display: none !important;
+}
+:root:not([customizing]) #forward-button[disabled] {
+	display: none !important;
+}
+
+/* Disable status bar */
+#statuspanel {
+	display: none !important;
+}
