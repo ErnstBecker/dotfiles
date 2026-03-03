@@ -12,18 +12,6 @@ function lsp_hover()
 	vim.lsp.buf.hover(opts)
 end
 
--- ======= Colorscheme =======
-function change_colorscheme()
-	require("telescope.builtin").colorscheme {
-		ignore_builtins = true,
-		layout_strategy = "vertical",
-		layout_config = {
-			width = 0.2,
-			height = 0.5
-		}
-	}
-end
-
 -- ======= DEBUG =======
 function toggle_scopes()
 	local current_ft = vim.bo.filetype

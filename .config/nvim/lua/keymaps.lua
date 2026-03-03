@@ -57,9 +57,6 @@ map("n", "<leader>gp", ":Telescope git_status<CR>")
 -- Git
 map("n", "<leader>gd", ":Gitsigns preview_hunk<CR>")
 
--- Colorscheme
-map("n", "<leader><C-t>", function () change_colorscheme() end, { desc = "Change Colorscheme"})
-
 -- ======= LSP =======
 map("n", "gd", "<cmd>Telescope lsp_definitions<CR>", { desc = "Go to definition"})
 map("n", "gr", "<cmd>Telescope lsp_references<CR>", { desc = "Go to reference" })

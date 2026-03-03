@@ -17,27 +17,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	end,
 })
 
-local pending_theme = nil
-
-vim.api.nvim_create_autocmd("ColorSchemePre", {
-	callback = function(args)
-		pending_theme = args.match
-	end,
-})
-
-vim.api.nvim_create_autocmd("ColorScheme", {
-	callback = function()
-		if pending_theme then
-			local config_path = vim.fn.stdpath("config") .. "/theme.txt"
-			local file = io.open(config_path, "w")
-			if file then
-				file:write(pending_theme)
-				file:close()
-			end
-		end
-	end,
-})
-
 vim.cmd [[ au BufDelete * if empty(filter(tabpagebuflist(), "!buflisted(v:val)")) && winnr("$") == 1 | exec "Alpha" | endif ]]
 
 vim.cmd [[ autocmd RecordingEnter * set cmdheight=1 ]]
