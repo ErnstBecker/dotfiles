@@ -1,6 +1,7 @@
 return {
 	"xiyaowong/transparent.nvim",
 	opts = {
+		enable = true,
 		groups = {
 			"Normal", "NormalNC", "Comment", "Constant", "Special", "Identifier",
 			"Statement", "PreProc", "Type", "Underlined", "Todo", "String", "Function",
