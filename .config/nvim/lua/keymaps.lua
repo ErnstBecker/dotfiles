@@ -6,8 +6,18 @@ map("n", "<Esc>", "i", { noremap = true })
 map("i", "<Tab>", function()
 	if require("blink.cmp").is_visible() then
 		require("blink.cmp").accept()
+	elseif require("blink.cmp").snippet_active() then
+		require("blink.cmp").snippet_forward()
 	else
 		return "<Tab>"
+	end
+end, { expr = true })
+
+map("i", "<S-Tab>", function()
+	if require("blink.cmp").snippet_active() then
+		require("blink.cmp").snippet_backward()
+	else
+		return "<S-Tab>"
 	end
 end, { expr = true })
 
@@ -52,7 +62,8 @@ map("n", "<leader><C-t>", function () change_colorscheme() end, { desc = "Change
 
 -- ======= LSP =======
 map("n", "gd", "<cmd>Telescope lsp_definitions<CR>", { desc = "Go to definition"})
-map("n", "gr", "<cmd>Telescope <CR>", { desc = "Go to reference" })
+map("n", "gr", "<cmd>Telescope lsp_references<CR>", { desc = "Go to reference" })
+map("n", "<leader>ls", "<cmd>Telescope lsp_document_symbols<CR>", { desc = "Document symbols" })
 map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "variable rename" })
 map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP code action" })
 map("n", "<leader>d", vim.diagnostic.open_float)
