@@ -40,7 +40,8 @@ vbox.zen-workspace-tabs-section.zen-current-workspace-indicator,
 	display: inherit !important;
 }
 
-/* Disable browser buttons  */
-.titlebar-buttonbox-container {
+/* Disable browser titlebar buttons  */
+.titlebar-buttonbox-container,
+.titlebar-button {
 	display: none !important
 }
