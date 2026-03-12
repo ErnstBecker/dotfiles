@@ -18,7 +18,7 @@ user_pref("browser.aboutConfig.showWarning", false);
 // GENERAL CONFIGS
 // UI and theme
 user_pref("apz.overscroll.enabled", false);
-user_pref("browser.tabs.inTitlebar", 0);
+user_pref("browser.tabs.inTitlebar", 1);
 user_pref("browser.tabs.allow_transparent_browser", true);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("extensions.activeThemeID", "firefox-compact-dark@mozilla.org");
