@@ -39,3 +39,8 @@ vbox.zen-workspace-tabs-section.zen-current-workspace-indicator,
 .tab-content[selected]:hover .tab-close-button {
 	display: inherit !important;
 }
+
+/* Disable browser buttons  */
+.titlebar-buttonbox-container {
+	display: none !important
+}
