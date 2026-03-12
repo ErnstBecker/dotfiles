@@ -9,7 +9,7 @@ return {
 	lazy = false,
 	opts = {
 		show_navic = true,
-		show_dirname = false,
+		show_dirname = true,
 		show_basename = false,
 	}
 }
