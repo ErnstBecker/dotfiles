@@ -5,8 +5,6 @@
 # █░░  ▄▀█  ▀▀█  █░█
 # █▄▄  █▀█  █▄▄   █
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-alias pacman-clean="sudo pacman -Rns $(pacman -Qtdq)"
-alias paru-clean="pacman -Qtdq | sudo pacman -Rns -"
 alias clock="tty-clock -C 1 -c -s -b"
 alias battery="acpi"
 alias ff="fastfetch"
