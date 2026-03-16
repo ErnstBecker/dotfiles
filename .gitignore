@@ -4,6 +4,9 @@ lazy-lock.json
 theme.txt
 modules/*
 
+.local
+!.local/bin
+
 # Zen Browser
 zen
 !zen/profiles.ini
@@ -14,3 +17,4 @@ zen
 tmux
 !tmux/tmux.conf
 !tmux/plugins/.gitkeep
+
