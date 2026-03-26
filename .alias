@@ -18,8 +18,8 @@ alias cw="change_wpp.sh"
 
 # ▄▀█  █░░  ▀█▀
 # █▀█  █▄▄  ░█░
-alias ls="lsd --recursive --depth 1 --group-dirs=first"
-alias cat="bat --style=auto"
+alias ls="lsd --group-dirs=first"
+alias cat="bat --style=numbers --paging=never"
 
 
 # █▄░█  ▄▀█  █░█  █  █▀▀  ▄▀█  ▀█▀  █  █▀█  █▄░█
@@ -35,7 +35,7 @@ alias gi="git init"
 alias gcl="git clone"
 alias gs="git status --short"
 alias gd="git diff"
-alias gl='git log --graph --all --pretty=format:"%C(magenta)%H%n%C(green)%an:  %ar%C(blue)  %C(cyan)%D%n%s%n"'
+alias gl='git log --graph --all --pretty=format:"%C(magenta)%H%n%C(green)%an: %ar%C(blue) %C(cyan)%D%n%s%n"'
 
 # Add/Commit
 alias ga="git add"
