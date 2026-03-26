@@ -1,11 +1,11 @@
 import Quickshell
 import QtQuick
-import "topbar"
+import "components"
 
 PanelWindow {
-	id: topbar
+	id: bar
 	anchors { top: true; left: true; right: true }
-	height: 26
+	implicitHeight: 26
 	color: root.bgcolor
 
 	Clock {
