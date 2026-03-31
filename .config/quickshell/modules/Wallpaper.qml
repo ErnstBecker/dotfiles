@@ -27,7 +27,7 @@ WlrLayershell {
 	Item {
 		anchors.fill: parent
 
-		Image {
+		AnimatedImage {
 			id: imgA
 			anchors.fill: parent
 			fillMode: Image.PreserveAspectCrop
@@ -36,6 +36,7 @@ WlrLayershell {
 			sourceSize: Qt.size(wallpaper.width, wallpaper.height)
 			source: wallpaper.imgPath
 			visible: true
+			playing: true
 
 			onStatusChanged: {
 				if (!wallpaper.useA && status === Image.Ready && source !== "")
@@ -43,7 +44,7 @@ WlrLayershell {
 			}
 		}
 
-		Image {
+		AnimatedImage {
 			id: imgB
 			anchors.fill: parent
 			fillMode: Image.PreserveAspectCrop
@@ -51,6 +52,7 @@ WlrLayershell {
 			smooth: true
 			sourceSize: Qt.size(wallpaper.width, wallpaper.height)
 			visible: false
+			playing: true
 
 			onStatusChanged: {
 				if (wallpaper.useA && status === Image.Ready && source !== "")
