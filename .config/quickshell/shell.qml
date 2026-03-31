@@ -10,7 +10,7 @@ ShellRoot {
 	property color fgcolor: "#d2d2d2"
 	property color accentcolor: "#ff0043"
 	property int fontsize: 16
-	property string timeformat: "dd 'of' MMM  HH:mm"
+	property string timeformat: "MMM dd  hh:mm A"
 
 	Wallpaper {}
 	Bar {}
