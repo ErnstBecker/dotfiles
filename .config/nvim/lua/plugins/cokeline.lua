@@ -2,7 +2,7 @@ return {
 	"willothy/nvim-cokeline",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		"nvim-tree/nvim-web-devicons",
+		"DaikyXendo/nvim-material-icon",
 		"stevearc/resession.nvim"
 	},
 	config = function()
