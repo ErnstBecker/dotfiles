@@ -1,10 +1,2 @@
-return {
-	{
-		"rebelot/kanagawa.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			vim.cmd("colorscheme kanagawa-dragon")
-		end,
-	},
-}
+vim.pack.add { "https://github.com/rebelot/kanagawa.nvim" }
+vim.cmd("colorscheme kanagawa-dragon")
