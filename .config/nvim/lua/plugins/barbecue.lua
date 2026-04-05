@@ -1,15 +1,10 @@
-return {
-	"utilyre/barbecue.nvim",
-	name = "barbecue",
-	version = "*",
-	dependencies = {
-		"SmiteshP/nvim-navic",
-		"DaikyXendo/nvim-material-icon",
-	},
-	lazy = false,
-	opts = {
-		show_navic = true,
-		show_dirname = true,
-		show_basename = false,
-	}
-}
+vim.pack.add ({
+	"https://github.com/utilyre/barbecue.nvim",
+	"https://github.com/SmiteshP/nvim-navic",
+	"https://github.com/DaikyXendo/nvim-material-icon",
+})
+require("barbecue").setup({
+	show_navic = true,
+	show_dirname = true,
+	show_basename = false,
+})

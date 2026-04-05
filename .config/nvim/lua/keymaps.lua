@@ -1,13 +1,16 @@
 local map = vim.keymap.set
+local cmds = require("newcmds")
 
 -- ======= INSERT =======
 map("n", "<Esc>", "i", { noremap = true })
 
 map("i", "<Tab>", function()
 	if require("blink.cmp").is_visible() then
-		require("blink.cmp").accept()
+		vim.schedule(function() require("blink.cmp").accept() end)
+		return ""
 	elseif require("blink.cmp").snippet_active() then
-		require("blink.cmp").snippet_forward()
+		vim.schedule(function() require("blink.cmp").snippet_forward() end)
+		return ""
 	else
 		return "<Tab>"
 	end
@@ -15,7 +18,8 @@ end, { expr = true })
 
 map("i", "<S-Tab>", function()
 	if require("blink.cmp").snippet_active() then
-		require("blink.cmp").snippet_backward()
+		vim.schedule(function() require("blink.cmp").snippet_backward() end)
+		return ""
 	else
 		return "<S-Tab>"
 	end
@@ -65,13 +69,5 @@ map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "variable rename" })
 map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP code action" })
 map("n", "<leader>d", vim.diagnostic.open_float)
 map("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>")
-map("n", "K", function() lsp_hover() end, { desc = "LSP Hover" })
+map("n", "K", cmds.lsp_hover, { desc = "LSP Hover" })
 
--- ======= DEBUG =======
-map("n", "<C-h>", function() require("dap").step_out() end)
-map("n", "<C-j>", function() require("dap").step_over() end)
-map("n", "<C-k>", function() require("dap").continue() end)
-map("n", "<C-l>", function() require("dap").step_into() end)
-map("n", "<leader><Tab>", function() require("dap").toggle_breakpoint() end)
-map("n", "<leader>s", function() toggle_scopes() end)
-map("n", "<leader>b", function() toggle_breakpoint() end)

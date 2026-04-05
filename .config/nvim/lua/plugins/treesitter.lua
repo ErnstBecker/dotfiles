@@ -1,12 +1,7 @@
-return {
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		opts = {
-			ensure_installed = { "lua", "rust", "toml", "json", "bash", "go", "python" },
-			incremental_selection = { enable = true },
-			highlight = { enable = true },
-			indent = { enable = true },
-		},
-	},
-}
+vim.pack.add("https://github.com/nvim-treesitter/nvim-treesitter")
+
+require("nvim-treesitter.configs").setup({
+	ensure_installed = { "rust", "toml", "json", "bash", "go", "python" },
+	highlight = { enable = true },
+	indent = { enable = true },
+})

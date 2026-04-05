@@ -1,22 +1,19 @@
-return {
-	"nvim-lualine/lualine.nvim",
-	config = function()
-		require("lualine").setup({
-			options = {
-				theme = "auto"
-			},
-			sections = {
-				lualine_a = { "mode" },
-				lualine_b = { "branch", "diff" },
-				lualine_c = { "diagnostics" },
+vim.pack.add { "https://github.com/nvim-lualine/lualine.nvim" }
 
-				lualine_x = {
-					"filetype",
-				},
+require("lualine").setup({
+	options = {
+		theme = "auto"
+	},
+	sections = {
+		lualine_a = { "mode" },
+		lualine_b = { "branch", "diff" },
+		lualine_c = { "diagnostics" },
 
-				lualine_y = { "progress" },
-				lualine_z = { "location" },
-			}
-		})
-	end
-}
+		lualine_x = {
+			"filetype",
+		},
+
+		lualine_y = { "progress" },
+		lualine_z = { "location" },
+	}
+})

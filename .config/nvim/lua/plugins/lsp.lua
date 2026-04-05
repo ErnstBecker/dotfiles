@@ -1,46 +1,20 @@
-return {
-	{
-		"mason-org/mason-lspconfig.nvim",
-		opts = {
-			ensure_installed = {
-				"rust_analyzer",
-				"gopls",
-				"lua_ls",
-			},
-			automatic_installation = true
-		},
-		handlers = {
-			function(server_name)
-				vim.lsp.enable(server_name)
-			end,
-		},
-	},
-	{
-		"mason-org/mason.nvim",
-		opts = {
-			ui = {
-				icons = {
-					package_installed   = "✓",
-					package_pending     = "➜",
-					package_uninstalled = "✗",
-				},
-			},
-		},
-	},
-	{
-		"neovim/nvim-lspconfig",
-		config = function()
-			vim.lsp.config.lua_ls = {
-				settings = {
-					Lua = {
-						diagnostics = {
-							globals = { "vim" }
-						}
-					}
-				}
-			}
+vim.pack.add({
+	"https://github.com/neovim/nvim-lspconfig",
+	"https://github.com/mason-org/mason.nvim",
+	"https://github.com/mason-org/mason-lspconfig.nvim",
+})
 
-			vim.lsp.enable("lua_ls")
-		end
-	}
-}
+require("mason").setup({
+	ui = {
+		icons = {
+			package_installed   = "✓",
+			package_pending     = "➜",
+			package_uninstalled = "✗",
+		},
+	},
+})
+
+require("mason-lspconfig").setup({
+	ensure_installed = { "rust_analyzer", "gopls", "lua_ls" },
+	automatic_enable = true,
+})
