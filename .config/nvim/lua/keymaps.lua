@@ -41,8 +41,8 @@ map("n", "<C-w>", ":bdelete<CR>", { noremap = true, nowait = true })
 map("n", "<leader>w", ":write<CR>")
 map("n", "<leader>q", ":quit!<CR>")
 map("n", "<C-a>", "ggVG", { desc = "Select All" })
-map("n", "<C-Tab>", "<Plug>(cokeline-focus-next)")
-map("n", "<C-S-Tab>", "<Plug>(cokeline-focus-prev)")
+map("n", "<C-Tab>", "<Plug>(cokeline-focus-next)", { desc = "Next buffer" })
+map("n", "<C-S-Tab>", "<Plug>(cokeline-focus-prev)", { desc = "Prev buffer" })
 
 -- Search
 map("n", "<C-f>", "/", { desc = "Search forward" })
@@ -70,4 +70,3 @@ map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP code acti
 map("n", "<leader>d", vim.diagnostic.open_float)
 map("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>")
 map("n", "K", cmds.lsp_hover, { desc = "LSP Hover" })
-
