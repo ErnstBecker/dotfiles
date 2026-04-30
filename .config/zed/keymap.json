@@ -14,6 +14,11 @@
 			"ctrl-b": "workspace::ToggleRightDock",
 			"g d": "editor::GoToDefinition",
 			"space ctrl-f": "pane::DeploySearch",
+			"space tab": "editor::ToggleBreakpoint",
+			"ctrl-h": "debugger::StepOut",
+			"ctrl-j": "debugger::StepOver",
+			"ctrl-k": "debugger::Start",
+			"ctrl-l": "debugger::StepInto",
 		},
 	},
 	{
@@ -35,6 +40,16 @@
 			"escape": ["workspace::SendKeystrokes", "ctrl-shift-e ctrl-b"],
 			"ctrl-b": ["workspace::SendKeystrokes", "ctrl-shift-e ctrl-b"],
 			"q": ["workspace::SendKeystrokes", "ctrl-shift-e ctrl-b"],
+		},
+	},
+	{
+		// DEBUG
+		"context": "Workspace",
+		"bindings": {
+			"ctrl-h": "debugger::StepOut",
+			"ctrl-j": "debugger::StepOver",
+			"ctrl-k": "debugger::Continue",
+			"ctrl-l": "debugger::StepInto",
 		},
 	},
 ]
