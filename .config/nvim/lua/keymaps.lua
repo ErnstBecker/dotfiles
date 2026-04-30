@@ -36,7 +36,8 @@ map("v", "<S-Tab>", "<gv", { desc = "Unindent selection" })
 
 -- ======= NORMAL MODE =======
 -- Navigation and buffers
-map("n", "<C-b>", ":Neotree toggle right<CR>")
+-- map("n", "<C-b>", ":Neotree toggle right<CR>")
+map("n", "<C-b>", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 map("n", "<C-w>", ":bdelete<CR>", { noremap = true, nowait = true })
 map("n", "<leader>w", ":write<CR>")
 map("n", "<leader>q", ":quit!<CR>")
