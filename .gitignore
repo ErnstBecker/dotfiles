@@ -1,6 +1,6 @@
 history
 btop.log
-lazy-lock.json
+nvim-pack-lock.json
 theme.txt
 modules/*
 
@@ -17,4 +17,3 @@ zen
 tmux
 !tmux/tmux.conf
 !tmux/plugins/.gitkeep
-
