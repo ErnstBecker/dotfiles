@@ -4,7 +4,7 @@ Text {
 	id: clock
 	font { pixelSize: root.fontsize; bold: true }
 	text: Qt.formatDateTime(new Date(), root.timeformat)
-	color: root.fgcolor
+	color: root.theme.fgcolor
 
 	Timer {
 		interval: 1000
