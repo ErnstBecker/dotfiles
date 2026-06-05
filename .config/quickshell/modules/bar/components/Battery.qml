@@ -78,10 +78,10 @@ Item {
 
 		if (status === "Charging")
 			batColor = root.theme.success
-		else if (pct <= 25)
-			batColor = root.theme.warning
 		else if (pct <= 15)
 			batColor = root.theme.error
+		else if (pct <= 30)
+			batColor = root.theme.warning
 		else
 			batColor = root.theme.fgcolor
 	}
