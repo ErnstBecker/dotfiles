@@ -28,14 +28,6 @@ Item {
 		anchors { verticalCenter: parent.verticalCenter; verticalCenterOffset: 1; left: iconText.right; leftMargin: 4 }
 	}
 
-	function batteryIcon(pct) {
-		if (pct >= 90) return iconFull
-		if (pct >= 75) return iconThreeQuarters
-		if (pct >= 50) return iconHalf
-		if (pct >= 25) return iconQuarter
-		return iconEmpty
-	}
-
 	FileView {
 		id: uevent
 		path: "/sys/class/power_supply/BAT0/uevent"
@@ -76,11 +68,19 @@ Item {
 		iconText.text = batteryIcon(pct)
 		pctText.text = `${pct}%`
 
+		function batteryIcon(pct) {
+			if (pct >= 80) return iconFull
+			if (pct >= 60) return iconThreeQuarters
+			if (pct >= 40) return iconHalf
+			if (pct >= 15) return iconQuarter
+			return iconEmpty
+		}
+
 		if (status === "Charging")
 			batColor = root.theme.success
-		else if (pct <= 15)
+		else if (pct <= 14)
 			batColor = root.theme.error
-		else if (pct <= 30)
+		else if (pct <= 39)
 			batColor = root.theme.warning
 		else
 			batColor = root.theme.fgcolor
