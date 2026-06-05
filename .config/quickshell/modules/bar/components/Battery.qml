@@ -44,7 +44,7 @@ Item {
 	}
 
 	Timer {
-		interval: 1000
+		interval: 10000
 		running: true
 		repeat: true
 		onTriggered: uevent.reload()
@@ -77,12 +77,12 @@ Item {
 		pctText.text = `${pct}%`
 
 		if (status === "Charging")
-			batColor = root.theme.positivecolor
-		else if (pct > 35)
-			batColor = root.theme.fgcolor
-		else if (pct > 25)
-			batColor = "#FFD700"
+			batColor = root.theme.success
+		else if (pct <= 25)
+			batColor = root.theme.warning
+		else if (pct <= 15)
+			batColor = root.theme.error
 		else
-			batColor = root.theme.accentcolor
+			batColor = root.theme.fgcolor
 	}
 }
