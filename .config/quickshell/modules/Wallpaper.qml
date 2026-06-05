@@ -110,17 +110,15 @@ WlrLayershell {
 		}
 	}
 
-	Process {
+	FileView {
 		id: fileWatcher
-		command: ["inotifywait", "-m", "-e", "close_write,moved_to,create",
-		wallpaper.imgPath.replace("file://", "")]
-		running: true
-		stdout: SplitParser {
-			onRead: data => {
-				var next = wallpaper.useA ? imgB : imgA
-				next.source = ""
-				next.source = wallpaper.imgPath
-			}
+		path: wallpaper.imgPath
+		watchChanges: true
+
+		onFileChanged: {
+			var next = wallpaper.useA ? imgB : imgA
+			next.source = ""
+			next.source = wallpaper.imgPath
 		}
 	}
 }
