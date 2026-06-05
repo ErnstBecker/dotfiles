@@ -4,11 +4,7 @@ import "modules"
 
 ShellRoot {
 	id: root
-	property color dark: "#000"
-	property color light: "#fff"
-	property color bgcolor: dark
-	property color fgcolor: "#d2d2d2"
-	property color accentcolor: "#ff0043"
+	property QtObject theme: Kanagawa {}
 	property int fontsize: 16
 	property string timeformat: "MMM dd  hh:mm A"
 

@@ -6,9 +6,13 @@ PanelWindow {
 	id: bar
 	anchors { top: true; left: true; right: true }
 	implicitHeight: 26
-	color: root.bgcolor
+	color: root.theme.bgcolor
 
 	Clock {
 		anchors.centerIn: parent
+	}
+
+	Battery {
+		anchors { right: parent.right; verticalCenter: parent.verticalCenter; rightMargin: root.fontsize / 2 }
 	}
 }
