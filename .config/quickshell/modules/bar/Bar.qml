@@ -14,5 +14,6 @@ PanelWindow {
 
 	Battery {
 		anchors { right: parent.right; verticalCenter: parent.verticalCenter; rightMargin: root.fontsize / 2 }
+		showPercent: true
 	}
 }

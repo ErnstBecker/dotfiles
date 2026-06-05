@@ -12,6 +12,7 @@ Item {
 	readonly property string iconQuarter: "\uF243"
 	readonly property string iconEmpty: "\uF244"
 
+	property bool showPercent: true
 	property color batColor: root.theme.fgcolor
 
 	Text {
@@ -66,7 +67,7 @@ Item {
 		}
 
 		iconText.text = batteryIcon(pct)
-		pctText.text = `${pct}%`
+		pctText.text = battery.showPercent ? `${pct}%` : ""
 
 		function batteryIcon(pct) {
 			if (pct >= 80) return iconFull
