@@ -29,6 +29,24 @@ map("i", "<C-Space>", function()
 	require("blink.cmp").show()
 end)
 
+map("i", "<C-n>", function()
+	if require("blink.cmp").is_visible() then
+		require("blink.cmp").select_next()
+		return ""
+	else
+		return "<C-n>"
+	end
+end, { expr = true })
+
+map("i", "<C-p>", function()
+	if require("blink.cmp").is_visible() then
+		require("blink.cmp").select_prev()
+		return ""
+	else
+		return "<C-p>"
+	end
+end, { expr = true })
+
 -- ======= VISUAL MODE =======
 -- Indentation with tab
 map("v", "<Tab>", ">gv", { desc = "Indent selection" })
