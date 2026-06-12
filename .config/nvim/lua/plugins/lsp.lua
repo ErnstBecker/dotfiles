@@ -18,3 +18,7 @@ require("mason-lspconfig").setup({
 	ensure_installed = { "rust_analyzer", "gopls", "lua_ls" },
 	automatic_enable = true,
 })
+
+vim.lsp.config("*", {
+	capabilities = require("blink.cmp").get_lsp_capabilities(),
+})
