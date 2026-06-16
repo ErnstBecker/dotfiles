@@ -11,6 +11,9 @@ map("i", "<Tab>", function()
 	elseif require("blink.cmp").snippet_active() then
 		vim.schedule(function() require("blink.cmp").snippet_forward() end)
 		return ""
+	elseif require("copilot.suggestion").is_visible() then
+		require("copilot.suggestion").accept()
+		return ""
 	else
 		return "<Tab>"
 	end
