@@ -12,6 +12,11 @@ require("blink.cmp").setup({
 	},
 	fuzzy = { implementation = "prefer_rust_with_warning" },
 	completion = {
+		list = {
+			selection = {
+				auto_insert = false,
+			},
+		},
 		accept = {
 			auto_brackets = {
 				enabled = true,

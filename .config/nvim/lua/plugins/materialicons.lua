@@ -1,4 +1,4 @@
-vim.pack.add ({ 
+vim.pack.add ({
 	"https://github.com/DaikyXendo/nvim-material-icon"
 })
 require("nvim-web-devicons").setup({
