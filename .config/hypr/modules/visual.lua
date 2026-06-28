@@ -19,6 +19,10 @@ hl.config({
 		shadow = {
 			enabled = false,
 		},
+
+		blur = {
+			enabled = false,
+		},
 	},
 
 	animations = {
