@@ -6,7 +6,6 @@
 # █▄▄  █▀█  █▄▄   █
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias clock="tty-clock -C 1 -c -s -b"
-alias battery="acpi"
 alias ff="fastfetch"
 alias c="clear"
 
