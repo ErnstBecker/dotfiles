@@ -4,7 +4,7 @@ vim.pack.add({
 require("oil").setup({
 	keymaps = {
 		["s"] = "actions.select",
-		["h"] = "actions.toggle_hidden",
+		["."] = "actions.toggle_hidden",
 		["<C-s>"] = { "actions.parent", mode = "n" },
 	},
 })
