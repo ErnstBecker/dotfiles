@@ -77,7 +77,7 @@ Item {
 			return iconEmpty
 		}
 
-		if (status === "Charging")
+		if (status === "Charging" || status === "Full")
 			batColor = root.theme.success
 		else if (pct <= 14)
 			batColor = root.theme.error
