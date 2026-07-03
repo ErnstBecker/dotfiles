@@ -6,7 +6,7 @@ ShellRoot {
 	id: root
 	property QtObject theme: Kanagawa {}
 	property int fontsize: 16
-	property string timeformat: "MMM dd  hh:mm A"
+	property string timeformat: "MMM dd  HH:mm"
 
 	Wallpaper {}
 	Bar {}
