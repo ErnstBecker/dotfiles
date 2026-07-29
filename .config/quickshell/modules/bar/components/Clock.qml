@@ -2,7 +2,7 @@ import QtQuick
 
 Text {
 	id: clock
-	font { pixelSize: root.fontsize; bold: true }
+	font { family: root.fontfamily + " Mono"; pixelSize: root.fontsize; bold: true }
 	text: Qt.formatDateTime(new Date(), root.timeformat)
 	color: root.theme.fgcolor
 
