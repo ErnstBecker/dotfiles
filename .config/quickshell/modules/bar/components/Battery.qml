@@ -1,3 +1,5 @@
+pragma ComponentBehavior: Bound
+
 import Quickshell.Io
 import QtQuick
 
@@ -17,14 +19,14 @@ Item {
 
 	Text {
 		id: iconText
-		font { pixelSize: root.fontsize; bold: true }
+		font { family: root.fontfamily; pixelSize: root.fontsize; bold: true }
 		color: battery.batColor
 		anchors.verticalCenter: parent.verticalCenter
 	}
 
 	Text {
 		id: pctText
-		font { pixelSize: root.fontsize - 4; bold: true }
+		font { family: root.fontfamily; pixelSize: root.fontsize - 4; bold: true }
 		color: battery.batColor
 		anchors { verticalCenter: parent.verticalCenter; verticalCenterOffset: 1; left: iconText.right; leftMargin: 4 }
 	}
