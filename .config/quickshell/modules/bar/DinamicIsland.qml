@@ -66,8 +66,13 @@ PanelWindow {
 				id: notify
 			}
 
+			Volume {
+				id: volume
+				visible: !notify.hasNotification && active
+			}
+
 			RowLayout {
-				visible: !notify.hasNotification
+				visible: !notify.hasNotification && !volume.active
 				spacing: 12
 
 				Clock {

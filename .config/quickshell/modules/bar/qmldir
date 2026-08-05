@@ -2,3 +2,4 @@ Clock 1.0 components/Clock.qml
 Battery 1.0 components/Battery.qml
 Notify 1.0 components/Notify.qml
 Media 1.0 components/Media.qml
+Volume 1.0 components/Volume.qml
