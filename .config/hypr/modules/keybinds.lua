@@ -36,18 +36,18 @@ hl.bind(mainMod .. " + C",    hl.dsp.exec_cmd(mainScripts .. "/resize_window.sh"
 hl.bind(mainMod .. " + HOME", hl.dsp.exit())
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 
--- Window resize (Vim-style)
-hl.bind(mainMod .. " + ALT + H", hl.dsp.window.resize({ x = -100, y =    0, relative = true }))
-hl.bind(mainMod .. " + ALT + L", hl.dsp.window.resize({ x =  100, y =    0, relative = true }))
-hl.bind(mainMod .. " + ALT + K", hl.dsp.window.resize({ x =    0, y = -100, relative = true }))
-hl.bind(mainMod .. " + ALT + J", hl.dsp.window.resize({ x =    0, y =  100, relative = true }))
+-- Window resize / focus movement (Vim-style)
+local vimDirs = {
+	{ key = "H", x = -100, y =    0, dir = "left"  },
+	{ key = "L", x =  100, y =    0, dir = "right" },
+	{ key = "K", x =    0, y = -100, dir = "up"    },
+	{ key = "J", x =    0, y =  100, dir = "down"  },
+}
+for _, d in ipairs(vimDirs) do
+	hl.bind(mainMod .. " + ALT + "  .. d.key, hl.dsp.window.resize({ x = d.x, y = d.y, relative = true }))
+	hl.bind(mainMod .. " + CTRL + " .. d.key, hl.dsp.focus({ direction = d.dir }))
+end
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
-
--- Focus movement (Vim-style)
-hl.bind(mainMod .. " + CTRL + H", hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. " + CTRL + J", hl.dsp.focus({ direction = "down" }))
-hl.bind(mainMod .. " + CTRL + K", hl.dsp.focus({ direction = "up" }))
-hl.bind(mainMod .. " + CTRL + L", hl.dsp.focus({ direction = "right" }))
 
 
 -- ============================================== --
@@ -75,18 +75,29 @@ end
 -- █▄ ▄█  █▀▀  █▀▄  █  ▄▀█ --
 -- █░▀░█  ██▄  █▄▀  █  █▀█ --
 -- ======================= --
-hl.bind("XF86AudioRaiseVolume",  hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"),    { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume",  hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),    { locked = true, repeating = true })
-hl.bind("XF86AudioMute",         hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),   { locked = true, repeating = true })
-hl.bind("XF86AudioMicMute",      hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd("brightnessctl s 10%+"),                         { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl s 10%-"),                         { locked = true, repeating = true })
+-- Volume / brightness
+local mediaKeys = {
+	{ "XF86AudioRaiseVolume",  "wpctl set-volume -l 1.25 @DEFAULT_AUDIO_SINK@ 5%+" },
+	{ "XF86AudioLowerVolume",  "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-" },
+	{ "XF86AudioMute",         "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" },
+	{ "XF86AudioMicMute",      "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle" },
+	{ "XF86MonBrightnessUp",   "brightnessctl s 10%+" },
+	{ "XF86MonBrightnessDown", "brightnessctl s 10%-" },
+}
+for _, k in ipairs(mediaKeys) do
+	hl.bind(k[1], hl.dsp.exec_cmd(k[2]), { locked = true, repeating = true })
+end
 
 -- Media playback (playerctl)
-hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = true })
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
+local playbackKeys = {
+	{ "XF86AudioNext",  "playerctl next" },
+	{ "XF86AudioPause", "playerctl play-pause" },
+	{ "XF86AudioPlay",  "playerctl play-pause" },
+	{ "XF86AudioPrev",  "playerctl previous" },
+}
+for _, k in ipairs(playbackKeys) do
+	hl.bind(k[1], hl.dsp.exec_cmd(k[2]), { locked = true })
+end
 
 
 -- ====================================================== --
