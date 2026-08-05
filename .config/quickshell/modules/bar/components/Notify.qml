@@ -35,15 +35,12 @@ RowLayout {
 	}
 
 	function hide(dismissedByUser) {
-		var n = notify.active
-		notify.active = null
-		if (!n)
+		if (!notify.active)
 			return
 		if (dismissedByUser)
-			n.dismiss()
+			notify.active.dismiss()
 		else
-			n.expire()
-		n.tracked = false
+			notify.active.expire()
 	}
 
 	NotificationServer {
@@ -53,8 +50,15 @@ RowLayout {
 		imageSupported: true
 
 		onNotification: (notification) => {
-			if (notify.active)
-				notify.hide(false)
+			if (notify.active) {
+				var old = notify.active
+				old.expire()
+				// onClosed may have already cleaned this up synchronously
+				if (notify.active === old) {
+					notify.active = null
+					old.tracked = false
+				}
+			}
 			notification.tracked = true
 			notify.active = notification
 			ttlTimer.restart()
@@ -70,10 +74,10 @@ RowLayout {
 	Connections {
 		target: notify.active
 		function onClosed(reason) {
-			if (notify.active) {
-				notify.active.tracked = false
-				notify.active = null
-			}
+			var n = notify.active
+			notify.active = null
+			if (n)
+				n.tracked = false
 		}
 	}
 
@@ -100,8 +104,11 @@ RowLayout {
 
 		MouseArea {
 			anchors.fill: parent
-			cursorShape: notify.active && notify.active.desktopEntry ? Qt.PointingHandCursor : Qt.ArrowCursor
-			onClicked: notify.focusSender()
+			cursorShape: Qt.PointingHandCursor
+			onClicked: {
+				notify.focusSender()
+				notify.hide(true)
+			}
 		}
 	}
 }
