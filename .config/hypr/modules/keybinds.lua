@@ -44,8 +44,9 @@ local vimDirs = {
 	{ key = "J", x =    0, y =  100, dir = "down"  },
 }
 for _, d in ipairs(vimDirs) do
-	hl.bind(mainMod .. " + ALT + "  .. d.key, hl.dsp.window.resize({ x = d.x, y = d.y, relative = true }))
 	hl.bind(mainMod .. " + CTRL + " .. d.key, hl.dsp.focus({ direction = d.dir }))
+	hl.bind(mainMod .. " + ALT + "  .. d.key, hl.dsp.window.resize({ x = d.x, y = d.y, relative = true }))
+	hl.bind(mainMod .. " + CTRL + SHIFT + " .. d.key, hl.dsp.window.move({ x = d.x, y = d.y, relative = true }))
 end
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
@@ -56,8 +57,8 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 -- ============================================== --
 hl.bind(mainMod .. " + H",          hl.dsp.focus({ workspace = "r-1" }))
 hl.bind(mainMod .. " + L",          hl.dsp.focus({ workspace = "r+1" }))
-hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "r+1" }))
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "r-1" }))
+hl.bind(mainMod .. " + mouse_down",   hl.dsp.focus({ workspace = "r+1" }))
+hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "r-1" }))
 
 -- Relative move to workspace
 hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.move({ workspace = "r-1" }))
