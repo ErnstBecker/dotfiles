@@ -20,7 +20,8 @@ RowLayout {
 	property int dividerGap: 12
 
 	readonly property var players: Mpris.players ? Mpris.players.values : []
-	readonly property var player: players.find(p => p.isPlaying) || players[0] || null
+	readonly property var spotifyPlayer: players.find(p => (p.desktopEntry || "").toLowerCase() === "spotify") || null
+	readonly property var player: media.spotifyPlayer || players.find(p => p.isPlaying) || players[0] || null
 	readonly property bool active: player !== null
 
 	visible: active
