@@ -1,11 +1,7 @@
--- █▄▀  █▀▀  █░█  █▀▄  █  █▄░█  █▀▄  █▀▀
--- █▀▄  ██▄   █   ██▀  █  █░▀█  █▄▀  ▄▄█
+-- █▄▀ █▀▀ █░█ █▀▄ █ █▄░█ █▀▄ █▀▀
+-- █▀▄ ██▄  █  ██▀ █ █░▀█ █▄▀ ▄▄█
 
-
--- ================== --
--- █░█  ▄▀█  █▀▄  █▀▀ --
--- ▀▄▀  █▀█  █▀▄  ▄▄█ --
--- ================== --
+-- Vars
 local mainMod     = "SUPER"
 local mainScripts = os.getenv("HOME") .. "/.local/bin"
 local terminal    = "kitty"
@@ -14,22 +10,14 @@ local files       = "thunar"
 local music       = "spotify"
 local menu        = mainScripts .. "/run_rofi.sh"
 
-
--- ======================================== --
--- █▀█  █▀▄  █▀█  █▀▀  █▀▄  ▄▀█  █▄ ▄█  █▀▀ --
--- █▀▀  █▀▄  █▄█  █▄█  █▀▄  █▀█  █░▀░█  ▄▄█ --
--- ======================================== --
+-- Programs
 hl.bind(mainMod .. " + T",     hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + E",     hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + F",     hl.dsp.exec_cmd(files))
 hl.bind(mainMod .. " + M",     hl.dsp.exec_cmd(music))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 
-
--- ==================================== --
--- █░▄░█  █  █▄░█  █▀▄  █▀█  █░▄░█  █▀▀ --
--- █▀ ▀█  █  █░▀█  █▄▀  █▄█  █▀ ▀█  ▄▄█ --
--- ==================================== --
+-- Windows
 hl.bind("ALT + F4",           hl.dsp.window.kill())
 hl.bind(mainMod .. " + Q",    hl.dsp.window.close())
 hl.bind(mainMod .. " + C",    hl.dsp.exec_cmd(mainScripts .. "/resize_window.sh"))
@@ -50,11 +38,7 @@ for _, d in ipairs(vimDirs) do
 end
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
-
--- ============================================== --
--- █▄░█  ▄▀█  █░█  █  █▀▀  ▄▀█  ▀█▀  █  █▀█  █▄░█ --
--- █░▀█  █▀█  ▀▄▀  █  █▄█  █▀█  ░█░  █  █▄█  █░▀█ --
--- ============================================== --
+-- Navigation
 hl.bind(mainMod .. " + H",          hl.dsp.focus({ workspace = "r-1" }))
 hl.bind(mainMod .. " + L",          hl.dsp.focus({ workspace = "r+1" }))
 hl.bind(mainMod .. " + mouse_down",   hl.dsp.focus({ workspace = "r+1" }))
@@ -71,11 +55,7 @@ for i = 1, 10 do
 	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
-
--- ======================= --
--- █▄ ▄█  █▀▀  █▀▄  █  ▄▀█ --
--- █░▀░█  ██▄  █▄▀  █  █▀█ --
--- ======================= --
+-- Media
 -- Volume / brightness
 local mediaKeys = {
 	{ "XF86AudioRaiseVolume",  "wpctl set-volume -l 1.25 @DEFAULT_AUDIO_SINK@ 5%+" },
@@ -100,10 +80,6 @@ for _, k in ipairs(playbackKeys) do
 	hl.bind(k[1], hl.dsp.exec_cmd(k[2]), { locked = true })
 end
 
-
--- ====================================================== --
--- █▀▀  █▀▀  █▀▄  █▀▀  █▀▀  █▄░█  █▀▀  █░█  █▀█  ▀█▀  █▀▀ --
--- ▄▄█  █▄▄  █▀▄  ██▄  ██▄  █░▀█  ▄▄█  █▀█  █▄█  ░█░  ▄▄█ --
--- ====================================================== --
+-- Screenshot
 hl.bind("PRINT",                   hl.dsp.exec_cmd([[grim - | tee ~/media/screenshots/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png | wl-copy]]))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd([[grim -g "$(slurp)" - | tee ~/media/screenshots/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png | wl-copy]]))
