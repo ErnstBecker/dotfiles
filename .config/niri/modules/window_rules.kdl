@@ -1,0 +1,22 @@
+// █░▄░█ █ █▄░█ █▀▄ █▀█ █░▄░█ █▀▀
+// █▀ ▀█ █ █░▀█ █▄▀ █▄█ █▀ ▀█ ▄▄█
+
+window-rule {
+	open-maximized true
+}
+
+window-rule {
+	match app-id="^zen$"
+	open-maximized true
+}
+
+window-rule {
+	match app-id="^kitty$"
+	open-maximized false
+}
+
+// Steam
+window-rule {
+	match app-id="^steam$" title="^Friends List$"
+	open-floating true
+}

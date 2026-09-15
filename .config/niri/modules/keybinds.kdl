@@ -1,0 +1,65 @@
+// █▄▀  █▀▀  █░█  █▀▄  █  █▄░█  █▀▄  █▀▀
+// █▀▄  ██▄   █   ██▀  █  █░▀█  █▄▀  ▄▄█
+
+binds {
+	// SYSTEM
+	Mod+A repeat=false { toggle-overview; }
+	Ctrl+Alt+Delete    { quit; }
+	Ctrl+Alt+P         { power-off-monitors; }
+	Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+	// PROGRAMS
+	Mod+T     { spawn "kitty"; }
+	Mod+E     { spawn "zen"; }
+	Mod+N     { spawn "thunar"; }
+	Mod+Space { spawn-sh "~/.local/bin/run_rofi.sh"; }
+
+	// WINDOWS
+	Mod+Q  repeat=false { close-window; }
+	Alt+F4 repeat=false { close-window; }
+	Mod+F       { maximize-column; }
+	Mod+Shift+F { fullscreen-window; }
+	Mod+V       { toggle-window-floating; }
+
+	// Vim-style focus / move / resize
+	Mod+H     { focus-column-left; }
+	Mod+L     { focus-column-right; }
+
+	Mod+Ctrl+H        { move-column-left; }
+	Mod+Ctrl+L        { move-column-right; }
+	Mod+Ctrl+Shift+H  { consume-or-expel-window-left; }
+
+	Mod+R { switch-preset-column-width; }
+	Mod+Shift+R { switch-preset-column-width-back; }
+	Mod+Ctrl+Shift+R { switch-preset-window-height; }
+	Mod+Ctrl+R { reset-window-height; }
+	Mod+Ctrl+Shift+L  { consume-or-expel-window-right; }
+
+	Mod+Alt+H { set-column-width "-10%"; }
+	Mod+Alt+L { set-column-width "+10%"; }
+	Mod+Alt+K { set-window-height "-10%"; }
+	Mod+Alt+J { set-window-height "+10%"; }
+
+	// WORKSPACES
+	Mod+J { focus-workspace-down; }
+	Mod+K { focus-workspace-up; }
+	Mod+Ctrl+J { move-column-to-workspace-down; }
+	Mod+Ctrl+K { move-column-to-workspace-up; }
+
+	Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+	Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+	Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
+	Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
+
+	// MEDIA
+	XF86AudioRaiseVolume  allow-when-locked=true { spawn-sh "wpctl set-volume -l 1.25 @DEFAULT_AUDIO_SINK@ 5%+"; }
+	XF86AudioLowerVolume  allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"; }
+	XF86AudioMute         allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+	XF86AudioMicMute      allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+	XF86MonBrightnessUp   allow-when-locked=true { spawn-sh "brightnessctl s 10%+"; }
+	XF86MonBrightnessDown allow-when-locked=true { spawn-sh "brightnessctl s 10%-"; }
+
+	// SCREENSHOT
+	Print { spawn-sh "grim - | tee ~/media/screenshots/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png | wl-copy"; }
+	Mod+Shift+S { spawn-sh "grim -g \"$(slurp)\" - | tee ~/media/screenshots/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png | wl-copy"; }
+}

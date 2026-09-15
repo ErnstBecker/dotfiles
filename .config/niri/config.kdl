@@ -1,0 +1,16 @@
+// █▄░█ █ █▀█ █
+// █░▀█ █ █▀▄ █
+
+// System
+include "modules/env.kdl"
+include "modules/general.kdl"
+include "modules/display.kdl"
+
+// Input
+include "modules/input.kdl"
+include "modules/keybinds.kdl"
+
+// Visual & Launch
+include "modules/visual.kdl"
+include "modules/window_rules.kdl"
+include "modules/autostart.kdl"

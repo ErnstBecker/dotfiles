@@ -1,0 +1,5 @@
+// █░░ ▄▀█ █░█ █▄░█ █▀▀ █░█
+// █▄▄ █▀█ █▄█ █░▀█ █▄▄ █▀█
+
+spawn-at-startup "quickshell"
+spawn-sh-at-startup "docker compose -f ~/dotfiles/modules/secrets/docker-compose.yml up -d"
