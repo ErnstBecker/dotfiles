@@ -1,0 +1,26 @@
+// █░█ █ █▀▀ █░█ ▄▀█ █░░
+// ▀▄▀ █ ▄▄█ █▄█ █▀█ █▄▄
+
+prefer-no-csd
+
+layout {
+	gaps 5
+
+	center-focused-column "never"
+
+	default-column-width { proportion 0.5; }
+	preset-column-widths {
+		proportion 0.5
+		proportion 0.66667
+		proportion 0.33333
+	}
+
+	focus-ring {
+		off
+	}
+}
+
+window-rule {
+	geometry-corner-radius 6
+	clip-to-geometry true
+}
