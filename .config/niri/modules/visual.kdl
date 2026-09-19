@@ -24,3 +24,7 @@ window-rule {
 	geometry-corner-radius 6
 	clip-to-geometry true
 }
+
+overview {
+	backdrop-color "#101010"
+}
