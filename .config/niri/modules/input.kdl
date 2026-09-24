@@ -22,3 +22,9 @@ input {
 		accel-profile "flat"
 	}
 }
+
+gestures {
+	hot-corners {
+		top-right
+	}
+}
