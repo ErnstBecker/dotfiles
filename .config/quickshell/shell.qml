@@ -10,6 +10,7 @@ ShellRoot {
 	property string timeformat: "MMM dd  HH:mm"
 
 	Wallpaper {}
+	Launcher {}
 	DinamicIsland {
 		// fill: true
 		barHeight: 26
