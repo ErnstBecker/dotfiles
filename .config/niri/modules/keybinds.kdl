@@ -12,7 +12,7 @@ binds {
 	Mod+T     { spawn "kitty"; }
 	Mod+E     { spawn "zen"; }
 	Mod+N     { spawn "thunar"; }
-	Mod+Space { spawn-sh "~/.local/bin/run_rofi.sh"; }
+	Mod+Space { spawn-sh "quickshell ipc call launcher toggle"; }
 
 	// WINDOWS
 	Mod+Q  repeat=false { close-window; }
