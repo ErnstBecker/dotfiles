@@ -6,6 +6,7 @@ modules/*
 
 .local
 !.local/bin
+!.local/share/fonts
 
 # Zen Browser
 zen
