@@ -1,3 +1,7 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = https://github.com/ErnstBecker/nvim.git
+
+[submodule ".claude"]
+	path = .claude
+	url = https://github.com/ErnstBecker/.claude.git
