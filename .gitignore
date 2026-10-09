@@ -1,8 +1,6 @@
-history
+.env
+.history
 btop.log
-nvim-pack-lock.json
-theme.txt
-modules/*
 
 .local
 !.local/bin
