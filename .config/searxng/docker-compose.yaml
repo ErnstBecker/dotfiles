@@ -1,0 +1,24 @@
+name: searxng
+
+services:
+  core:
+    image: searxng/searxng:${SEARXNG_VERSION:-latest}
+    container_name: searxng
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${PORT:-8080}:8080"
+    volumes:
+      - ./settings.yaml:/etc/searxng/settings.yaml:ro
+    environment:
+      - SEARXNG_SECRET=${SEARXNG_SECRET}
+      - SEARXNG_SETTINGS_PATH=/etc/searxng/settings.yaml
+    depends_on:
+      valkey:
+        condition: service_started
+        required: false
+
+  valkey:
+    image: valkey/valkey:alpine
+    container_name: searxng-valkey
+    restart: unless-stopped
+    command: valkey-server --save "" --appendonly no

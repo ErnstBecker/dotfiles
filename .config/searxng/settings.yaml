@@ -1,0 +1,24 @@
+use_default_settings: true
+
+server:
+  method: POST
+  image_proxy: true
+
+valkey:
+  url: redis://valkey:6379/0
+
+outgoing:
+  request_timeout: 6.0
+
+search:
+  autocomplete: ""
+
+ui:
+  hotkeys: vim
+  center_alignment: true
+  theme_args:
+    simple_style: black
+
+plugins:
+  searx.plugins.infinite_scroll.SXNGPlugin:
+    active: true

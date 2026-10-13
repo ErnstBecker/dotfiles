@@ -2,4 +2,4 @@
 // █▄▄ █▀█ █▄█ █░▀█ █▄▄ █▀█
 
 spawn-at-startup "quickshell"
-spawn-sh-at-startup "docker compose -f ~/dotfiles/modules/secrets/docker-compose.yml up -d"
+spawn-sh-at-startup "docker compose -f ~/.config/searxng/docker-compose.yaml up -d"
