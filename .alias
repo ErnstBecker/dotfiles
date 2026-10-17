@@ -65,3 +65,9 @@ alias gr="git reset"
 alias grh="git reset --hard HEAD~1"
 alias grs="git restore"
 alias grss="git restore --staged"
+
+# Remote
+alias grv="git remote -v"
+alias gra="git remote add"
+alias grao="git remote add origin"
+alias grso="git remote set-url origin"
