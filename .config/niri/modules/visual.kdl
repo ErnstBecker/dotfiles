@@ -4,6 +4,8 @@
 prefer-no-csd
 
 layout {
+	background-color "#000"
+
 	gaps 5
 
 	center-focused-column "never"
