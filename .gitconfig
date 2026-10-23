@@ -1,0 +1,72 @@
+[user]
+	name = Ernst Becker
+	email = ernstbecker@tutamail.com
+	signingkey = D106A5395BDFFBAC
+
+[commit]
+	gpgsign = true
+	verbose = true
+
+[tag]
+	gpgsign = true
+	sort = -taggerdate
+
+[core]
+	editor = nvim
+	pager = delta
+	autocrlf = input
+
+[init]
+	defaultBranch = main
+
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+	insteadOf = gh:
+
+[url "ssh://git@codeberg.org/"]
+	insteadOf = https://codeberg.org/
+	insteadOf = cb:
+
+[fetch]
+	prune = true
+
+[pull]
+	rebase = false
+
+[push]
+	default = current
+	autoSetupRemote = true
+	followTags = true
+
+[rebase]
+	autoStash = true
+	missingCommitsCheck = warn
+
+[merge]
+	tool = nvimdiff
+	conflictstyle = zdiff3
+
+[rerere]
+	enabled = true
+
+[diff]
+	algorithm = histogram
+	colorMoved = default
+
+[delta]
+	navigate = true
+	side-by-side = true
+
+[interactive]
+	diffFilter = delta --color-only
+	singlekey = true
+
+[column]
+	ui = auto
+
+[branch]
+	sort = -committerdate
+
+[safe]
+	directory = /etc/udev/rules.d
+	directory = /etc/portage
