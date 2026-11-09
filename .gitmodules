@@ -5,3 +5,7 @@
 [submodule ".config/quickshell"]
 	path = .config/quickshell
 	url = https://codeberg.org/ErnstBecker/quickshell.git
+
+[submodule ".local/share/fonts"]
+	path = .local/share/fonts
+	url = https://github.com/ErnstBecker/fonts.git
