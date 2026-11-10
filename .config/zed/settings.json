@@ -76,7 +76,6 @@
 	"title_bar": {
 		"show_project_items": true,
 		"show_user_picture": false,
-		"show_branch_icon": false,
 		"show_branch_name": false,
 		"show_user_menu": false,
 		"show_sign_in": false,
@@ -133,12 +132,14 @@
 	"global_lsp_settings": {
 		"button": false,
 	},
-	"notification_panel": {
-		"button": false,
-	},
 
 	// Privacy & Telemetry
 	"disable_ai": true,
+	"agent": {
+		"dock": "right",
+		"favorite_models": [],
+		"model_parameters": [],
+	},
 	"telemetry": {
 		"diagnostics": false,
 		"metrics": false,
